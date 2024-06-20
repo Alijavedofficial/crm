@@ -1,14 +1,34 @@
 
 import React from "react";
-import { useState } from "react";
+import styles from './Login.module.css';
 
 export default function Login() {
-  const [email,setEmail] =useState('')
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <div className={styles.loginForm}>
       <div>
-        frontend CRM
+       <img src="/assets/loginImage.svg"></img>
       </div>
-    </main>
+      <div className={styles.signinDiv}>
+        <div>
+       <h1 className={styles.SigninLabel}>Sign In</h1>
+       <div>
+       <label htmlFor="emailAdress" className={styles.Email} >Email Address</label>
+       <input className={styles.input} >
+        
+        
+       </input>
+       </div>
+       <div>
+       <label htmlFor="password" className={styles.Email} >Password</label>
+       <input className={styles.input}>
+        
+        
+       </input>
+       </div>
+       </div>
+      </div>
+    
+    
+    </div>
   );
 }
