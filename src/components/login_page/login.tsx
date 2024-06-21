@@ -41,26 +41,6 @@ export default function Login() {
           </Form>
         </div>
       </div>
-
-      {/* <div className={styles.signinDiv}>
-        <div>
-       <h1 className={styles.SigninLabel}>Sign In</h1>
-       <div>
-       <label htmlFor="emailAdress" className={styles.Email} >Email Address</label>
-       <input className={styles.input} >
-        
-        
-       </input>
-       </div>
-       <div>
-       <label htmlFor="password" className={styles.Email} >Password</label>
-       <input className={styles.input}>
-        
-        
-       </input>
-       </div>
-       </div>
-      </div> */}
     </div>
   );
 }
