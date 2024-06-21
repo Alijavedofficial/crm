@@ -20,13 +20,13 @@ export default function Login() {
             onValuesChange={() => {}}
             className="login-fields"
           >
-            <Form.Item label="Field A">
+            <Form.Item label="Email">
               <Input
                 placeholder="Enter your email address"
                 className="custom-input"
               />
             </Form.Item>
-            <Form.Item label="Field B">
+            <Form.Item label="Password">
               <Input
                 placeholder="Enter your password"
                 className="custom-input"
