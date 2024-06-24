@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { Button, Form, Input, Radio } from "antd";
+import { Button, Form, Input, Checkbox } from "antd";
 import "./Login.scss";
+import Link from "next/link";
 
 export default function Login() {
   const [form] = Form.useForm();
@@ -20,18 +21,26 @@ export default function Login() {
             onValuesChange={() => {}}
             className="login-fields"
           >
-            <Form.Item label="Field A">
+            <Form.Item label="Email Address">
               <Input
                 placeholder="Enter your email address"
                 className="custom-input"
               />
             </Form.Item>
-            <Form.Item label="Field B">
+            <Form.Item label="Password">
               <Input
                 placeholder="Enter your password"
                 className="custom-input"
               />
             </Form.Item>
+            <div className="remember-me-section">
+              <Form.Item>
+                <Checkbox className="remember-me">Remember me</Checkbox>
+              </Form.Item>
+              <Link href={'/forgot-password'}>
+                <span className="forgot-link">Forgot Password</span>
+              </Link>
+            </div>
             <Form.Item>
               <Button type="primary" className="login-btn">
                 Log in
@@ -41,26 +50,6 @@ export default function Login() {
           </Form>
         </div>
       </div>
-
-      {/* <div className={styles.signinDiv}>
-        <div>
-       <h1 className={styles.SigninLabel}>Sign In</h1>
-       <div>
-       <label htmlFor="emailAdress" className={styles.Email} >Email Address</label>
-       <input className={styles.input} >
-        
-        
-       </input>
-       </div>
-       <div>
-       <label htmlFor="password" className={styles.Email} >Password</label>
-       <input className={styles.input}>
-        
-        
-       </input>
-       </div>
-       </div>
-      </div> */}
     </div>
   );
 }
