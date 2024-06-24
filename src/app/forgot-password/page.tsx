@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { Button, Form, Input, Checkbox } from "antd";
-import "./Login.scss";
-import Link from "next/link";
+import { Button, Form, Input, Radio } from "antd";
+import "./forgot-password.scss";
 
-export default function Login() {
+export default function ForgotPassword() {
   const [form] = Form.useForm();
   return (
     <div className="loginFormWrapper">
@@ -14,7 +13,7 @@ export default function Login() {
           <img src="/assets/loginImage.svg"></img>
         </div>
         <div className="loginForm">
-          <span className="loginHeading">Sign in</span>
+          <span className="loginHeading">Forgot Password</span>
           <Form
             form={form}
             layout="vertical"
@@ -27,23 +26,9 @@ export default function Login() {
                 className="custom-input"
               />
             </Form.Item>
-            <Form.Item label="Password">
-              <Input
-                placeholder="Enter your password"
-                className="custom-input"
-              />
-            </Form.Item>
-            <div className="remember-me-section">
-              <Form.Item>
-                <Checkbox className="remember-me">Remember me</Checkbox>
-              </Form.Item>
-              <Link href={'/forgot-password'}>
-                <span className="forgot-link">Forgot Password</span>
-              </Link>
-            </div>
             <Form.Item>
               <Button type="primary" className="login-btn">
-                Log in
+                Submit
                 <img src="/assets/tiger-icon.png"></img>
               </Button>
             </Form.Item>
