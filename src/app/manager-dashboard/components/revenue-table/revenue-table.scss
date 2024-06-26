@@ -1,0 +1,83 @@
+.revenue-table-card {
+  fill: #fdfdfd;
+  height: 655px;
+  filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.5));
+  .table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .revenue-side {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 6px;
+    .heading {
+      color: #f15522;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.22px;
+    }
+    .sub-heading {
+      color: #91929e;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+  .stat-sum {
+    color: #f15522;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; /* 65% */
+  }
+  .table-items-heading {
+    color: #91929e;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+  }
+  .name-heading {
+    color: #0a1629;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 133.333% */
+    flex-grow: 1;
+    padding-inline: 30px;
+  }
+  .amount {
+    color: #008767;
+    text-align: right;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.18px;
+  }
+  .view-more {
+    color: #f15522;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .table-items-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+  }
+}
