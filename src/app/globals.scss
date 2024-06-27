@@ -31,3 +31,10 @@ body {
     text-wrap: balance;
   }
 }
+
+.mg-das-wrapper {
+  min-height: 100vh;
+  .side-bar {
+    background: #f48035;
+  }
+}
