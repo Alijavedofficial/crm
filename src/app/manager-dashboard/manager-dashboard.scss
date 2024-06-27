@@ -1,18 +1,15 @@
-.mg-das-wrapper {
-  min-height: 100vh;
-  .overall-stats {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    gap: 10px;
-  }
-  .main-stat-card{
-    width: 20%;
-  }
-  .side-bar{
-    background: #F48035;
-  }
-  .table-card{
-    width: 33%;
-  }
+.overall-stats {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+.main-stat-card {
+  width: 20%;
+}
+.side-bar {
+  background: #f48035;
+}
+.table-card {
+  width: 33%;
 }
