@@ -60,27 +60,27 @@ const App: React.FC = () => {
     selectedRowKeys,
     onChange: onSelectChange,
   };
-  const hasSelected = selectedRowKeys.length > 0;
 
   return (
-    <div className="assign-leads">
-      <div style={{ marginBottom: 16 }}>
-        <span className="heading">Unassigned Leads</span>
-        <span style={{ marginLeft: 8 }}>
-          {hasSelected ? `Selected ${selectedRowKeys.length} items` : ""}
-        </span>
+    <div className="assign-leads-wrapper">
+      <div className="add-section">
+        <div className="lead-add-card">+Quick Add Lead</div>
+        <div className="bulk-add-card">+Bulk Upload Leads</div>
       </div>
-      <Table
-        rowSelection={rowSelection}
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-      />
-      <Pagination
-        total={70}
-        defaultCurrent={1}
-        showSizeChanger={false}
-      />
+      <div className="assign-leads">
+        <div style={{ marginBottom: 16 }}>
+          <span className="heading">Unassigned Leads</span>
+        </div>
+        <Table
+          rowSelection={rowSelection}
+          columns={columns}
+          dataSource={data}
+          pagination={false}
+        />
+        <div className="table-pagination">
+          <Pagination total={70} defaultCurrent={1} showSizeChanger={false} />
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,18 +1,82 @@
-.assign-leads {
-  .heading {
-    color: #f48035;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: -0.22px;
+.assign-leads-wrapper {
+  .assign-leads {
+    background-color: #fdfdfd;
+    box-shadow: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.5));
+    padding: 16px;
+    margin-top: 12px;
+    border-radius: 15px;
+    .heading {
+      color: #f48035;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.22px;
+    }
+    th {
+      color: #f48035 !important;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.14px;
+    }
+    .table-pagination {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      margin-top: 12px;
+    }
+    .ant-pagination .ant-pagination-item {
+      border-radius: 4px !important;
+      border: 1px solid #eee !important;
+      background: #f5f5f5 !important;
+    }
+    .ant-pagination .ant-pagination-item-active {
+      border-radius: 4px !important;
+      background: #f48035 !important;
+      color: #fff;
+      a {
+        color: #fff !important;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -0.12px;
+      }
+    }
   }
-  th {
-    color: #f48035 !important;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: -0.14px;
+  .add-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    .lead-add-card {
+      width: 50%;
+      background-color: #fff0e3;
+      box-shadow: drop-shadow(0px 6px 58px rgba(196, 203, 214, 0.1));
+      border-radius: 30px;
+      color: #000;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.18px;
+      padding: 22px;
+      text-align: center;
+    }
+    .bulk-add-card {
+      width: 50%;
+      background-color: #fff;
+      box-shadow: drop-shadow(0px 6px 58px rgba(196, 203, 214, 0.1));
+      border-radius: 30px;
+      color: #000;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.18px;
+      padding: 22px;
+      text-align: center;
+    }
   }
 }

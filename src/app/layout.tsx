@@ -6,7 +6,6 @@ import "./globals.scss";
 import { Button, Layout, Menu, theme } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import Deals from "../../public/assets/Deals";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,50 +21,63 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
+  const authRouter = ["/", "/forgot-password"];
+
   return (
     <html lang="en">
-      <body>
-        <Layout className="mg-das-wrapper">
-          <Sider
-            trigger={null}
-            collapsible
-            collapsed={collapsed}
-            className="side-bar"
-          >
-            <Deals/>
-          </Sider>
-          <Layout>
-            <Header style={{ padding: 0, background: colorBgContainer }}>
-              <Button
-                type="text"
-                icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                onClick={() => setCollapsed(!collapsed)}
-                style={{
-                  fontSize: "16px",
-                  width: 64,
-                  height: 64,
-                }}
-              />
-            </Header>
-
-            <Content
-              style={{
-                margin: "24px 16px",
-                padding: 24,
-                minHeight: 280,
-                background: colorBgContainer,
-                borderRadius: borderRadiusLG,
-              }}
+      {authRouter.includes(window?.location?.pathname) ? (
+        <body>{children}</body>
+      ) : (
+        <body>
+          <Layout className="mg-das-wrapper">
+            <Sider
+              trigger={null}
+              collapsible
+              collapsed={collapsed}
+              className="side-bar"
             >
-              {children}
-            </Content>
+              <div>
+                <img src="/assets/tiger-icon.png" />
+              </div>
+              <div className="side-icon-styles">
+                <img src="/assets/menu.svg" />
+              </div>
+              <div className="side-icon-styles">
+                <img src="/assets/target.svg" />
+              </div>
+              <div>
+                <img src="/assets/Deals.svg" />
+              </div>
+              <div className="side-icon-styles p-15">
+                <img src="/assets/profile.svg" />
+              </div>
+              <div className="side-icon-styles">
+                <img src="/assets/Group.svg" />
+              </div>
+            </Sider>
+            <Layout>
+              <Header style={{ padding: 0, background: colorBgContainer }}>
+                <span className="platform-name">Tiger Sports</span>
+              </Header>
+
+              <Content
+                style={{
+                  margin: "24px 16px",
+                  padding: 24,
+                  minHeight: 280,
+                }}
+              >
+                {children}
+              </Content>
+            </Layout>
           </Layout>
-        </Layout>
-      </body>
+        </body>
+      )}
     </html>
   );
 }
