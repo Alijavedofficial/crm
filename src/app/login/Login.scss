@@ -57,9 +57,13 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  &:hover{
+    background: #f48035 !important;
+    color: #000 !important;
+  }
 }
 .remember-me-section {
-  width: 88%;
+  width: 71%;
   display: flex;
   justify-content: space-between;
   align-items: start;
