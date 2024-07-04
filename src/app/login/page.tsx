@@ -6,19 +6,19 @@ import "./Login.scss";
 import Link from "next/link";
 import { loginApi } from "@/services/auth";
 import { useRouter } from "next/navigation";
+import { setToken } from "../utils/user-helpers";
 
 const Login = () => {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const onSubmit = async (values: any) => {
-    console.log("values", values);
     try {
       const resp = await loginApi({
         email: values.email,
         password: values.password,
       });
-      router.push('/manager-dashboard')
+      setToken(resp?.data?.token);
+      router.push("/manager-dashboard");
     } catch {}
   };
 
@@ -63,7 +63,7 @@ const Login = () => {
             <Form.Item>
               <Button type="primary" className="login-btn" htmlType="submit">
                 Log in
-                <img src="/assets/tiger-icon.png" alt="icon"></img>
+                <img src="/assets/tiger-icon.png" alt="icon" />
               </Button>
             </Form.Item>
           </Form>

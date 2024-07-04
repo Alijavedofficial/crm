@@ -34,10 +34,31 @@ body {
       align-items: center;
       gap: 12px;
     }
-    .side-icon-styles {
-      background: black;
-      padding: 10px;
-      border-radius: 10px;
+    .ant-menu-item-selected {
+      background: unset;
+      color: unset;
+    }
+    .side-icons {
+      background-color: unset;
+      .deals-icon img{
+        padding: unset !important;
+      }
+      .ant-menu-title-content{
+        color: #fff0e3;
+      }
+      .profile-icon img {
+        padding: 15px !important;
+      }
+      img {
+        background: black;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      li {
+        height: max-content;
+        padding-left: 35px;
+        margin-top: 12px;
+      }
     }
     .collapse-icon {
       position: absolute;
@@ -69,10 +90,16 @@ body {
     height: 41px;
     flex-shrink: 0;
   }
-  .header-right-side{
+  .header-right-side {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
+  }
+  .profile-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
   }
 }

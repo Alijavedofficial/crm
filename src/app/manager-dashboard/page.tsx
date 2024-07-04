@@ -1,16 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Layout, Menu, theme } from "antd";
 import "./manager-dashboard.scss";
 import StatsCard from "./components/stats-card/stats-card";
 import RevenueTable from "./components/revenue-table/revenue-table";
 import AgentsTable from "./components/agents-table/agents-table";
 import TeamsTable from "./components/teams-table/teams-table";
-
-
+import { getAllUsers } from "@/services/users";
+import { getAllTeams } from "@/services/teams";
 
 const App: React.FC = () => {
+  const [agents, setAgents] = useState([]);
+  const [teams,setTeams] = useState([])
+
+  useEffect(() => {
+    retriveAllAgents();
+    retriveAllTeams();
+  }, []);
+
+  const retriveAllAgents = async () => {
+    try {
+      const users = await getAllUsers();
+      setAgents(users.data.filter((item: any) => item.position === "Agent"));
+    } catch {}
+  };
+
+  const retriveAllTeams = async () => {
+    try {
+      const teams = await getAllTeams();
+      setTeams(teams.data);
+    } catch {}
+  };
 
   return (
     <>
@@ -42,10 +63,10 @@ const App: React.FC = () => {
           <RevenueTable />
         </div>
         <div className="table-card">
-          <AgentsTable />
+          <AgentsTable data={agents} />
         </div>
         <div className="table-card">
-          <TeamsTable />
+          <TeamsTable data={teams} />
         </div>
       </div>
     </>

@@ -5,39 +5,7 @@ import "./teams-table.scss";
 import { Avatar, Card, Input } from "antd";
 import { UserOutlined, DownOutlined, SearchOutlined } from "@ant-design/icons";
 
-const TeamsTable = () => {
-  const dummyData = [
-    {
-      id: 1,
-      name: "Alice Johnson",
-      teamName: "Lead Generation Team",
-      agents: 10,
-    },
-    {
-      id: 2,
-      name: "Alice Johnson",
-      teamName: "Lead Generation Team",
-      agents: 10,
-    },
-    {
-      id: 3,
-      name: "Alice Johnson",
-      teamName: "Lead Generation Team",
-      agents: 10,
-    },
-    {
-      id: 4,
-      name: "Alice Johnson",
-      teamName: "Lead Generation Team",
-      agents: 10,
-    },
-    {
-      id: 5,
-      name: "Alice Johnson",
-      teamName: "Lead Generation Team",
-      agents: 10,
-    }
-  ];
+const TeamsTable = ({ data }: { data: Array<any> }) => {
 
   return (
     <Card className="teams-table-card">
@@ -47,17 +15,17 @@ const TeamsTable = () => {
         </div>
       </div>
       <div className="data-container">
-        {dummyData.map((item) => (
+        {data.map((item) => (
           <div className="team-member-entity" key={item.id}>
             <div className="table-items-content">
-              <span className="team-name">{item.teamName}</span>
+              <span className="team-name">{item.name}</span>
               <div className="member-info">
-                <span>{item.name}</span>
+                <span>{item.lead?.[0]?.name}</span>
               </div>
             </div>
             <div className="agent-meta">
-              <span>98+</span>
-              <span>12 Agents</span>
+              <span>98+</span>  
+              <span>{item?.agent?.length} Agents</span>
             </div>
           </div>
         ))}

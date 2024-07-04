@@ -1,6 +1,6 @@
 "use client";
 
-import { Input, Layout } from "antd";
+import { Input, Layout, Menu } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -39,28 +39,50 @@ export default function RootLayout({
                 left: 0,
                 top: 0,
                 bottom: 0,
-                zIndex:100
+                zIndex: 100,
               }}
             >
               <div>
                 <img src="/assets/tiger-icon.png" />
               </div>
-              <div className="side-icon-styles">
-                <img src="/assets/menu.svg" />
-              </div>
-              <div className="side-icon-styles">
-                <img src="/assets/target.svg" />
-              </div>
-              <div>
-                <img src="/assets/Deals.svg" />
-              </div>
-              <div className="side-icon-styles p-15">
-                <img src="/assets/profile.svg" />
-              </div>
-              <div className="side-icon-styles">
-                <img src="/assets/Group.svg" />
-              </div>
-              <div className="collapse-icon">
+              <Menu
+                mode="inline"
+                defaultSelectedKeys={["1"]}
+                className="side-icons"
+                items={[
+                  {
+                    key: "1",
+                    icon: <img src="/assets/menu.svg" />,
+                    label: "nav 1",
+                  },
+                  {
+                    key: "2",
+                    icon: <img src="/assets/target.svg" />,
+                    label: "nav 2",
+                  },
+                  {
+                    key: "3",
+                    icon: <img src="/assets/Deals.svg" />,
+                    label: "nav 3",
+                    className: "deals-icon",
+                  },
+                  {
+                    key: "4",
+                    icon: <img src="/assets/profile.svg" />,
+                    label: "nav 3",
+                    className: "profile-icon",
+                  },
+                  {
+                    key: "5",
+                    icon: <img src="/assets/Group.svg" />,
+                    label: "nav 3",
+                  },
+                ]}
+              />
+              <div
+                className="collapse-icon"
+                onClick={() => setCollapsed((prev) => !prev)}
+              >
                 <img src="/assets/collapse-icon.svg" />
               </div>
             </Sider>
@@ -76,7 +98,7 @@ export default function RootLayout({
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  paddingLeft:'75px'
+                  paddingLeft: collapsed ? "75px" : "187px",
                 }}
               >
                 <span className="platform-name">Tiger Sports</span>
@@ -88,13 +110,17 @@ export default function RootLayout({
                     placeholder="Search"
                   />
                   <img src="/assets/notifications.svg" />
-                  <img src="/assets/photo.svg" />
-                  <img src="/assets/right.svg" />
+                  <div className="profile-section">
+                    <img src="/assets/photo.svg" />
+                    <img src="/assets/right.svg" />
+                  </div>
                 </div>
               </Header>
               <Content
                 style={{
                   margin: "24px 67px",
+                  marginLeft: !collapsed ? "187px" : "67px",
+                  transition: "ease-in-out",
                   padding: 24,
                   minHeight: 280,
                 }}
