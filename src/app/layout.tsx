@@ -53,29 +53,29 @@ export default function RootLayout({
                   {
                     key: "1",
                     icon: <img src="/assets/menu.svg" />,
-                    label: "nav 1",
+                    label: "Dashboard",
                   },
                   {
                     key: "2",
                     icon: <img src="/assets/target.svg" />,
-                    label: "nav 2",
+                    label: "Assign Leads",
                   },
                   {
                     key: "3",
                     icon: <img src="/assets/Deals.svg" />,
-                    label: "nav 3",
+                    label: "Deals Status",
                     className: "deals-icon",
                   },
                   {
                     key: "4",
                     icon: <img src="/assets/profile.svg" />,
-                    label: "nav 3",
+                    label: "Agents",
                     className: "profile-icon",
                   },
                   {
                     key: "5",
                     icon: <img src="/assets/Group.svg" />,
-                    label: "nav 3",
+                    label: "teams",
                   },
                 ]}
               />
