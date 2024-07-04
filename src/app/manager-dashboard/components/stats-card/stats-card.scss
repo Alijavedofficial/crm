@@ -2,7 +2,6 @@
   border-radius: 20px;
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(244, 128, 53, 0.25);
-  height: 148px;
   .stats {
     color: #f15522;
     font-size: 40px;
@@ -12,7 +11,7 @@
   }
   .name {
     color: #f15522;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 26px;
@@ -21,11 +20,25 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
+
+    img {
+      width: auto;
+      height: 64px;
+    }
   }
   .stat-section-wrapper {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 10px;
+  }
+  .for-today {
+    width: 100%;
+    margin-top: 32px;
+    color: #f15522;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 26px;
+    border-top: 1px solid #f48035;
   }
 }

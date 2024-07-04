@@ -118,8 +118,9 @@ export default function RootLayout({
               </Header>
               <Content
                 style={{
-                  margin: "24px 67px",
-                  marginLeft: !collapsed ? "187px" : "67px",
+                  // margin: "24px 67px",
+                  // marginLeft: !collapsed ? "187px" : "67px",
+                  marginLeft: !collapsed ? "187px" : "77px",
                   transition: "ease-in-out",
                   padding: 24,
                   minHeight: 280,

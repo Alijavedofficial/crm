@@ -1,7 +1,7 @@
 .agents-table-card {
     fill: #fdfdfd;
-    height: 655px;
-    filter: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.5));
+    height: 382px;
+    box-shadow: 0px 4px 4px 0px rgba(244, 128, 53, 0.25);
     .table-heading {
       display: flex;
       justify-content: space-between;
@@ -30,7 +30,7 @@
     }
     .stat-sum {
       color: #f15522;
-      font-size: 40px;
+      font-size: 30px;
       font-style: normal;
       font-weight: 600;
       line-height: 26px; /* 65% */
@@ -62,7 +62,7 @@
       padding: 2px 10px;
       border-radius: 15px;
       text-align: right;
-      font-size: 18px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 500;
       line-height: normal;
@@ -72,6 +72,7 @@
       }
     }
     .view-more {
+      margin-top: 45px;
       color: #f15522;
       text-align: center;
       font-size: 12px;
@@ -87,4 +88,10 @@
       margin-block: 10px;
     }
   }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
   

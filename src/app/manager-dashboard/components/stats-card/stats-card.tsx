@@ -17,11 +17,12 @@ const StatsCard = ({
     <Card className="stats-card">
       <div className="content-wrapper">
         <div className="stat-section-wrapper">
-          <span className="stats">{stats}</span>
           <span className="name">{name}</span>
+          <span className="stats">{stats}</span>
         </div>
         <img src={`/assets/${icon}`} alt="icon" />
       </div>
+      <p className="for-today">for today</p>
     </Card>
   );
 };

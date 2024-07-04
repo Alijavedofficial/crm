@@ -35,24 +35,26 @@ const AgentsTable = ({ data }: { data: Array<any> }) => {
           marginBlock: 10,
         }}
       />
-      <div>
+      <div className="container">
         <div className="table-items-heading">
           <div>Agent Name</div>
           <div>Leads</div>
         </div>
 
-        {data.map((item) => (
-          <div className="table-items-content" key={item.id}>
-            <Avatar size={48} icon={<UserOutlined />} />
-            <div className="name-heading">{item.name}</div>
-            <div
-              className={`amount`}
-              // className={`amount ${item.amount > 200 ? "high-amount" : ""}`}
-            >
-              {100}
+        <div>
+          {data.map((item) => (
+            <div className="table-items-content" key={item.id}>
+              <Avatar size={48} icon={<UserOutlined />} />
+              <div className="name-heading">{item.name}</div>
+              <div
+                className={`amount`}
+                // className={`amount ${item.amount > 200 ? "high-amount" : ""}`}
+              >
+                {100}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="view-more">
           View More
           <DownOutlined
