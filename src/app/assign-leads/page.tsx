@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Table } from "antd";
 import type { TableColumnsType } from "antd";
 import { Pagination } from "antd";
 import "./assign-leads.scss";
+import { getAllUsers } from "@/services/users";
+import AssignLeadsModal from "./components/assign-lead-modal/assign-lead-modal";
 
 interface DataType {
   key: React.Key;
@@ -19,36 +21,31 @@ const columns: TableColumnsType<DataType> = [
     dataIndex: "name",
   },
   {
-    title: "Age",
-    dataIndex: "age",
+    title: "Phone",
+    dataIndex: "contact",
   },
   {
-    title: "Address",
-    dataIndex: "address",
+    title: "Email",
+    dataIndex: "email",
   },
 ];
 
-const data: DataType[] = [];
-for (let i = 0; i < 10; i++) {
-  data.push({
-    key: i,
-    name: `Edward King ${i}`,
-    age: 32,
-    address: `London, Park Lane no. ${i}`,
-  });
-}
-
 const App: React.FC = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [unassignedLeads, setUnassignedLeads] = useState([]);
+  const [isAssignLead, setIsAssignLead] = useState(false);
 
-  const start = () => {
-    setLoading(true);
-    // ajax request after empty completing
-    setTimeout(() => {
-      setSelectedRowKeys([]);
-      setLoading(false);
-    }, 1000);
+  useEffect(() => {
+    retriveAllAgents();
+  }, []);
+
+  const retriveAllAgents = async () => {
+    try {
+      const users = await getAllUsers();
+      setUnassignedLeads(
+        users.data.filter((item: any) => item.status === "inactive")
+      );
+    } catch {}
   };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
@@ -62,26 +59,39 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="assign-leads-wrapper">
-      <div className="add-section">
-        <div className="lead-add-card">+Quick Add Lead</div>
-        <div className="bulk-add-card">+Bulk Upload Leads</div>
-      </div>
-      <div className="assign-leads">
-        <div style={{ marginBottom: 16 }}>
-          <span className="heading">Unassigned Leads</span>
+    <>
+      <div className="assign-leads-wrapper">
+        <div className="add-section">
+          <div className="lead-add-card">+Quick Add Lead</div>
+          <div className="bulk-add-card">+Bulk Upload Leads</div>
         </div>
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-          pagination={false}
-        />
-        <div className="table-pagination">
-          <Pagination total={70} defaultCurrent={1} showSizeChanger={false} />
+        <div className="assign-leads">
+          <div style={{ marginBottom: 16 }}>
+            <span className="heading">Unassigned Leads</span>
+          </div>
+          <Table
+            rowSelection={rowSelection}
+            columns={columns}
+            dataSource={unassignedLeads}
+            pagination={false}
+          />
+          <div className="table-pagination">
+            <Pagination
+              total={unassignedLeads.length}
+              defaultCurrent={1}
+              showSizeChanger={false}
+            />
+          </div>
+          <Button className="assign-btn" onClick={() => setIsAssignLead(true)}>
+            Assign
+          </Button>
         </div>
       </div>
-    </div>
+      <AssignLeadsModal
+        isModalOpen={isAssignLead}
+        setIsModalOpen={setIsAssignLead}
+      />
+    </>
   );
 };
 

@@ -4,9 +4,24 @@ import React from "react";
 import { Button, Form, Input, Checkbox } from "antd";
 import "./Login.scss";
 import Link from "next/link";
+import { loginApi } from "@/services/auth";
+import { useRouter } from "next/navigation";
+import { setToken } from "../utils/user-helpers";
 
-export default function Login() {
-  const [form] = Form.useForm();
+const Login = () => {
+  const router = useRouter();
+
+  const onSubmit = async (values: any) => {
+    try {
+      const resp = await loginApi({
+        email: values.email,
+        password: values.password,
+      });
+      setToken(resp?.data?.token);
+      router.push("/manager-dashboard");
+    } catch {}
+  };
+
   return (
     <div className="loginFormWrapper">
       <div className="loginContent">
@@ -16,35 +31,39 @@ export default function Login() {
         <div className="loginForm">
           <span className="loginHeading">Sign in</span>
           <Form
-            form={form}
             layout="vertical"
             onValuesChange={() => {}}
             className="login-fields"
+            onFinish={onSubmit}
           >
-            <Form.Item label="Email Address">
+            <Form.Item name="email" label="Email Address">
               <Input
                 placeholder="Enter your email address"
                 className="custom-input"
+                type="email"
+                required
               />
             </Form.Item>
-            <Form.Item label="Password">
+            <Form.Item name="password" label="Password">
               <Input
                 placeholder="Enter your password"
                 className="custom-input"
+                type="password"
+                required
               />
             </Form.Item>
             <div className="remember-me-section">
               <Form.Item>
                 <Checkbox className="remember-me">Remember me</Checkbox>
               </Form.Item>
-              <Link href={'/forgot-password'}>
+              <Link href={"/forgot-password"}>
                 <span className="forgot-link">Forgot Password</span>
               </Link>
             </div>
             <Form.Item>
-              <Button type="primary" className="login-btn">
+              <Button type="primary" className="login-btn" htmlType="submit">
                 Log in
-                <img src="/assets/tiger-icon.png"></img>
+                <img src="/assets/tiger-icon.png" alt="icon" />
               </Button>
             </Form.Item>
           </Form>
@@ -52,4 +71,5 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+export default Login;

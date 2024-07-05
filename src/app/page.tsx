@@ -1,11 +1,22 @@
+"use client"
+import { useEffect } from "react";
+import { getToken } from "./utils/user-helpers";
+import { useRouter } from "next/navigation";
 
-import Login from "@/components/login_page/login";
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!getToken()) {
+      router.push("/login");
+    } else {
+      router.push("/manager-dashboard");
+    }
+  }, []);
+
   return (
     <main className="">
-      <div>
-         <Login/>
-      </div>
+      <div></div>
     </main>
   );
 }

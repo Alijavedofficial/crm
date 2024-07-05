@@ -10,11 +10,11 @@ const RevenueTable = () => {
     { id: 1, name: "John Doe", amount: 10000 },
     { id: 2, name: "Jane Smith", amount: 25000 },
     { id: 3, name: "Michael Johnson", amount: 18000 },
-    { id: 4, name: "Emily Brown", amount: 30000 },
-    { id: 5, name: "Daniel Lee", amount: 15000 },
-    { id: 6, name: "Sarah Clark", amount: 22000 },
-    { id: 7, name: "Matthew Davis", amount: 28000 },
-    { id: 8, name: "Olivia Martinez", amount: 32000 },
+      // { id: 4, name: "Emily Brown", amount: 30000 },
+      // { id: 5, name: "Daniel Lee", amount: 15000 },
+      // { id: 6, name: "Sarah Clark", amount: 22000 },
+      // { id: 7, name: "Matthew Davis", amount: 28000 },
+      // { id: 8, name: "Olivia Martinez", amount: 32000 },
   ];
 
   const formatAmount = (amount: number) => {
@@ -48,8 +48,10 @@ const RevenueTable = () => {
         {dummyData.map((item) => (
           <div className="table-items-content" key={item.id}>
             <Avatar size={48} icon={<UserOutlined />} />
-            <div className="name-heading">{item.name}</div>
-            <div className="amount">+{formatAmount(item.amount)}</div>
+            <span className="agent-meta">
+              <div className="name-heading">{item.name}</div>
+              <div className="amount">+{formatAmount(item.amount)}</div>
+            </span>
           </div>
         ))}
         <div className="view-more">

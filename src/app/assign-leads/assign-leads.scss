@@ -79,4 +79,16 @@
       text-align: center;
     }
   }
+  .assign-btn {
+    border-radius: 14px;
+    background: #ced5e0;
+    color: #eee;
+    &:hover {
+      border-radius: 14px !important;
+      background: #f48035 !important;
+      box-shadow: 0px 6px 12px 0px rgba(63, 140, 255, 0.26) !important;
+      color: #eee !important;
+      border: unset !important;
+    }
+  }
 }

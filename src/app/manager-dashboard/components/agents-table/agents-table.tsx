@@ -5,7 +5,7 @@ import "./agents-table.scss";
 import { Avatar, Card, Input } from "antd";
 import { UserOutlined, DownOutlined, SearchOutlined } from "@ant-design/icons";
 
-const AgentsTable = () => {
+const AgentsTable = ({ data }: { data: Array<any> }) => {
   const dummyData = [
     { id: 1, name: "Alice Johnson", amount: 10 },
     { id: 2, name: "Bob Smith", amount: 25 },
@@ -24,7 +24,7 @@ const AgentsTable = () => {
           <span className="heading">Agents</span>
           <span className="sub-heading">Includes All Teams</span>
         </div>
-        <span className="stat-sum">89</span>
+        <span className="stat-sum">{data.length}</span>
       </div>
 
       <Input
@@ -35,21 +35,26 @@ const AgentsTable = () => {
           marginBlock: 10,
         }}
       />
-      <div>
+      <div className="container">
         <div className="table-items-heading">
           <div>Agent Name</div>
           <div>Leads</div>
         </div>
 
-        {dummyData.map((item) => (
-          <div className="table-items-content" key={item.id}>
-            <Avatar size={48} icon={<UserOutlined />} />
-            <div className="name-heading">{item.name}</div>
-            <div className={`amount ${item.amount > 200 ? "high-amount" : ""}`}>
-              {item.amount}
+        <div>
+          {data.map((item) => (
+            <div className="table-items-content" key={item.id}>
+              <Avatar size={48} icon={<UserOutlined />} />
+              <div className="name-heading">{item.name}</div>
+              <div
+                className={`amount`}
+                // className={`amount ${item.amount > 200 ? "high-amount" : ""}`}
+              >
+                {100}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
         <div className="view-more">
           View More
           <DownOutlined
