@@ -1,9 +1,6 @@
-.main-container {
+.mg-dashboard-first-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: start;
-  gap: 20px;
+  gap: 12px;
 }
 .overall-stats {
   width: calc(50% - 20px);
@@ -18,40 +15,18 @@
   display: flex;
   justify-content: start;
   align-items: start;
-  gap: 20px;
-  .table-card {
-    width: 50%;
-  }
+  gap: 10px;
+  width: 50%;
+  flex-flow: row wrap;
 }
 .main-stat-card {
-  width: calc(50% - 20px);
-}
-.other-stat-cards {
-  width: 25%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: start;
-  gap: 20px;
-}
-.other-stat-card {
-  width: calc(50% - 20px);
-  span:nth-of-type(1) {
-    font-size: 16px !important;
-    text-wrap: nowrap;
-  }
-  span:nth-of-type(2) {
-    font-size: 30px !important;
-    text-wrap: nowrap;
-  }
-  .content-wrapper {
-    align-items: end !important;
-  }
-  img {
-    height: 32px !important;
-    transform: translateX(-10px);
-  }
+  width: 48%;
+  height: 174px;
 }
 .side-bar {
   background: #f48035;
+}
+.table-card {
+  width: 33%;
+  height: 362px;
 }

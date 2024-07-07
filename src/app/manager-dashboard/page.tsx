@@ -10,10 +10,11 @@ import TeamsTable from "./components/teams-table/teams-table";
 import SalesForecast from "./components/sales-forecast/sales-forecast";
 import { getAllUsers } from "@/services/users";
 import { getAllTeams } from "@/services/teams";
+import TransactionsTable from "./components/transactions-table/transactions-table";
 
 const App: React.FC = () => {
   const [agents, setAgents] = useState([]);
-  const [teams,setTeams] = useState([])
+  const [teams, setTeams] = useState([]);
 
   useEffect(() => {
     retriveAllAgents();
@@ -35,28 +36,37 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="main-container">
-      <div className="overall-stats">
-        <div className="main-stat-card">
-          <StatsCard name="Backlog" stats="288" icon="backlog.svg" />
+    <>
+      <div className="mg-dashboard-first-row">
+        <div className="overall-stats">
+          <div className="main-stat-card">
+            <StatsCard name="Backlog" stats="288" icon="backlog.svg" />
+          </div>
+          <div className="main-stat-card">
+            <StatsCard name="Followup" stats="288" icon="follow-up.svg" />
+          </div>
+          <div className="main-stat-card">
+            <StatsCard name="Won" stats="288" icon="won.svg" />
+          </div>
+          <div className="main-stat-card">
+            <StatsCard name="Lost" stats="288" icon="lost.svg" />
+          </div>
         </div>
-        {/* <div className="main-stat-card">
-          <StatsCard name="Followup" stats="208" icon="demo-sent.svg" />
-        </div> */}
-        <div className="main-stat-card">
-          <StatsCard name="Followup" stats="208" icon="follow-up.svg" />
-        </div>
-        <div className="main-stat-card">
-          <StatsCard name="Win" stats="243" icon="won.svg" />
-        </div>
-        <div className="main-stat-card">
-          <StatsCard name="Lost" stats="88" icon="lost.svg" />
-        </div>
-      </div>
-      <div className="overall-tables">
         <div className="table-card">
           <RevenueTable />
         </div>
+        <div className="table-card">
+          <TransactionsTable />
+        </div>
+      </div>
+      
+      <div
+        style={{
+          display: "flex",
+          gap: 20,
+          marginTop: "22px",
+        }}
+      >
         <div className="table-card">
           <AgentsTable data={agents} />
         </div>

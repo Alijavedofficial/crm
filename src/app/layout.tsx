@@ -32,6 +32,8 @@ export default function RootLayout({
               collapsible
               collapsed={collapsed}
               className="side-bar"
+              onMouseEnter={() => setCollapsed(false)}
+              onMouseLeave={() => setCollapsed(true)}
               style={{
                 overflow: "hidden",
                 height: "100vh",
@@ -42,7 +44,11 @@ export default function RootLayout({
                 zIndex: 100,
               }}
             >
-              <div>
+              <div
+                className={
+                  collapsed ? "platfprm-logo" : "expanded-platform-logo"
+                }
+              >
                 <img src="/assets/tiger-icon.png" />
               </div>
               <Menu
@@ -118,9 +124,8 @@ export default function RootLayout({
               </Header>
               <Content
                 style={{
-                  // margin: "24px 67px",
-                  // marginLeft: !collapsed ? "187px" : "67px",
-                  marginLeft: !collapsed ? "187px" : "77px",
+                  margin: "24px 67px",
+                  marginLeft: !collapsed ? "187px" : "67px",
                   transition: "ease-in-out",
                   padding: 24,
                   minHeight: 280,
