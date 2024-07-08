@@ -7,6 +7,8 @@ import { Pagination } from "antd";
 import "./assign-leads.scss";
 import { getAllUsers } from "@/services/users";
 import AssignLeadsModal from "./components/assign-lead-modal/assign-lead-modal";
+import QuickAddLead from "./components/add-lead-modal/add-lead-modal";
+import BulkUploadLead from "./components/bulk-upload-modal/bulk-upload-modal";
 
 interface DataType {
   key: React.Key;
@@ -34,7 +36,8 @@ const App: React.FC = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const [unassignedLeads, setUnassignedLeads] = useState([]);
   const [isAssignLead, setIsAssignLead] = useState(false);
-
+  const [quickAddLead, setQuickAddLead] = useState(false);
+  const [bulkUploadLead, setBulkUploadLead] = useState(false);
   useEffect(() => {
     retriveAllAgents();
   }, []);
@@ -62,8 +65,15 @@ const App: React.FC = () => {
     <>
       <div className="assign-leads-wrapper">
         <div className="add-section">
-          <div className="lead-add-card">+Quick Add Lead</div>
-          <div className="bulk-add-card">+Bulk Upload Leads</div>
+          <div className="lead-add-card" onClick={() => setQuickAddLead(true)}>
+            +Quick Add Lead
+          </div>
+          <div
+            className="bulk-add-card"
+            onClick={() => setBulkUploadLead(true)}
+          >
+            +Bulk Upload Leads
+          </div>
         </div>
         <div className="assign-leads">
           <div style={{ marginBottom: 16 }}>
@@ -90,6 +100,14 @@ const App: React.FC = () => {
       <AssignLeadsModal
         isModalOpen={isAssignLead}
         setIsModalOpen={setIsAssignLead}
+      />
+      <QuickAddLead
+        isModalOpen={quickAddLead}
+        setIsModalOpen={setQuickAddLead}
+      />
+      <BulkUploadLead
+        isModalOpen={bulkUploadLead}
+        setIsModalOpen={setBulkUploadLead}
       />
     </>
   );

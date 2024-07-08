@@ -1,0 +1,92 @@
+.bulk-upload-modal {
+  width: 50% !important;
+  .bulk-upload-modal-container {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    .bulk-upload-modal-heading {
+      color: #f48035;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.22px;
+      display: block;
+      text-align: center;
+    }
+    .dropdown-heading {
+      color: black;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.22px;
+      display: block;
+    }
+    .dropdown-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      width: 100%;
+      margin-inline: auto;
+      max-width: 600px;
+    }
+    .dropdown-input {
+      height: 45px;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .upload-input {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+    .upload-text {
+      font-size: 16px;
+      color: #666;
+      border: 1px solid #d9d9d9;
+      height: 45px;
+      border-radius: 10px 0 0 10px;
+      width: 100%;
+    }
+    .upload-btn {
+      margin-left: -25px !important;
+      width: 158px;
+      height: 48px;
+      border-radius: 14px;
+      background-color: black;
+      color: white;
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+    .save-btn-container {
+      align-self: center;
+    }
+    .save-btn {
+      all: unset;
+      width: 158px;
+      height: 48px;
+      border-radius: 14px;
+      background-color: #f48035;
+      box-shadow: 0px 6px 12px 0px rgba(63, 140, 255, 0.26);
+      color: #fff;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      cursor: pointer;
+      text-align: center;
+      &:hover {
+        border-radius: 14px;
+        background-color: darken(#f48035, 10%);
+        box-shadow: 0px 6px 12px 0px rgba(63, 140, 255, 0.26);
+        color: #fff;
+      }
+    }
+  }
+}
