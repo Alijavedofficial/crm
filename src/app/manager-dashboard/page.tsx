@@ -7,10 +7,11 @@ import StatsCard from "./components/stats-card/stats-card";
 import RevenueTable from "./components/revenue-table/revenue-table";
 import AgentsTable from "./components/agents-table/agents-table";
 import TeamsTable from "./components/teams-table/teams-table";
-import SalesForecast from "./components/sales-forecast/sales-forecast";
 import { getAllUsers } from "@/services/users";
 import { getAllTeams } from "@/services/teams";
 import TransactionsTable from "./components/transactions-table/transactions-table";
+import SalesForecast from "./components/sales-forecast/sales-forecast";
+import ObjectiveChart from "./components/objective-chart/objective-chart";
 
 const App: React.FC = () => {
   const [agents, setAgents] = useState([]);
@@ -59,7 +60,26 @@ const App: React.FC = () => {
           <TransactionsTable />
         </div>
       </div>
-      
+      <div className="mg-dashboard-second-row">
+        <div className="forecast">
+          <SalesForecast />
+        </div>
+        <div className="stat-cards-wrapper">
+          <div className="other-stat-card">
+            <StatsCard name="Incoming calls" stats="236" icon="phone_.svg" />
+          </div>
+          <div className="other-stat-card">
+            <StatsCard name="Outgoing calls" stats="208" icon="pick_call.svg" />
+          </div>
+          <div className="other-stat-card">
+            <StatsCard name="Successful" stats="135" icon="won.svg" />
+          </div>
+          <div className="other-stat-card">
+            <StatsCard name="Lost" stats="43" icon="lost.svg" />
+          </div>
+        </div>
+      </div>
+
       <div
         style={{
           display: "flex",
@@ -70,23 +90,14 @@ const App: React.FC = () => {
         <div className="table-card">
           <AgentsTable data={agents} />
         </div>
-      </div>
-      <SalesForecast />
-      <div className="other-stat-cards">
-        <div className="other-stat-card">
-          <StatsCard name="Incoming calls" stats="236" icon="phone_.svg" />
+        <div className="table-card">
+          <TeamsTable data={teams} />
         </div>
-        <div className="other-stat-card">
-          <StatsCard name="Outgoing calls" stats="208" icon="pick_call.svg" />
-        </div>
-        <div className="other-stat-card">
-          <StatsCard name="Successful" stats="135" icon="won.svg" />
-        </div>
-        <div className="other-stat-card">
-          <StatsCard name="Lost" stats="43" icon="lost.svg" />
+        <div className="objective-chart-wrapper">
+          <ObjectiveChart percentage={25} value={2300} total={9200} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
