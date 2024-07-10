@@ -1,0 +1,62 @@
+.objective-chart {
+  width: 100%;
+  height: inherit;
+  .container {
+    width: inherit;
+    height: inherit;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-align: center;
+  }
+
+  .header {
+    color: #ff6600;
+  }
+
+  .select {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+
+  .chartContainer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #ff6600;
+  }
+
+  .valueContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff6600;
+  }
+
+  .currencyIcon {
+    margin-right: 5px;
+  }
+  .total {
+    margin-top: 10px;
+    color: #666;
+  }
+}
