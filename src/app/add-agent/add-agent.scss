@@ -1,0 +1,97 @@
+.agent-form-container {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fa541c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.agent-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .ant-form-item {
+    flex: 1 1 45%; // Each item takes up 45% of the width, adjust as needed
+  }
+
+  .ant-form-item-full {
+    flex: 1 1 100%; // Full width items for specific fields
+  }
+
+  .submit-button {
+    background-color: #fa541c;
+    border-color: #fa541c;
+    width: 100%;
+  }
+}
+
+  .custom-upload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    .upload-input {
+      flex: 1;
+      border: 1px solid #d9d9d9;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+      color: #888;
+      background-color: #fff;
+      width: 495px;
+    }
+
+    .upload-button {
+      border-radius: 5px;
+      background-color: #000;
+      color: #fff;
+      padding: 22px 20px;
+      border: none;
+
+      &:hover {
+        background-color: #444;
+      }
+    }
+  }
+
+
+.add-agent-wrapper {
+  background-color: #fdfdfd;
+  border-radius: 15px;
+  .assign-leads {
+    box-shadow: drop-shadow(0px 10px 60px rgba(226, 236, 249, 0.5));
+    padding: 16px;
+    margin-top: 12px;
+    .heading {
+      color: #f48035;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: -0.22px;
+    }
+  }
+  .agent-btn {
+    border-radius: 14px;
+    background: #f48035;
+    color: #eee;
+    padding: 10px 20px 10px 25px;
+    height: 41px;
+    font-size: 14px;
+    border-radius: 14px;
+    margin: 0 auto;
+    box-shadow: 0px 6px 12px 0px rgba(244, 128, 53, 0.25) !important;
+  }
+}
+.simple-input{
+  height: 44px;
+}

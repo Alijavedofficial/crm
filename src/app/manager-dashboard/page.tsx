@@ -40,17 +40,21 @@ const App: React.FC = () => {
     <>
       <div className="mg-dashboard-first-row">
         <div className="overall-stats">
-          <div className="main-stat-card">
-            <StatsCard name="Backlog" stats="288" icon="backlog.svg" />
+          <div className="w-100">
+            <div className="main-stat-card">
+              <StatsCard name="Backlog" stats="288" icon="backlog.svg" />
+            </div>
+            <div className="main-stat-card">
+              <StatsCard name="Followup" stats="288" icon="follow-up.svg" />
+            </div>
           </div>
-          <div className="main-stat-card">
-            <StatsCard name="Followup" stats="288" icon="follow-up.svg" />
-          </div>
-          <div className="main-stat-card">
-            <StatsCard name="Won" stats="288" icon="won.svg" />
-          </div>
-          <div className="main-stat-card">
-            <StatsCard name="Lost" stats="288" icon="lost.svg" />
+          <div className="w-100">
+            <div className="main-stat-card">
+              <StatsCard name="Won" stats="288" icon="won.svg" />
+            </div>
+            <div className="main-stat-card">
+              <StatsCard name="Lost" stats="288" icon="lost.svg" />
+            </div>
           </div>
         </div>
         <div className="table-card">

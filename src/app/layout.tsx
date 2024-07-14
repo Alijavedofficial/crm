@@ -1,9 +1,8 @@
 "use client";
 
 import { Input, Layout, Menu } from "antd";
-import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import "./globals.scss";
 
 const { Header, Sider, Content } = Layout;
@@ -15,6 +14,7 @@ export default function RootLayout({
 }>) {
   const [collapsed, setCollapsed] = useState(true);
   const pathname = usePathname();
+  const router = useRouter();
 
   const authRoutes = ["/login", "/forgot-password"];
 
@@ -55,31 +55,34 @@ export default function RootLayout({
                 mode="inline"
                 defaultSelectedKeys={["1"]}
                 className="side-icons"
+                onClick={(resp) => {
+                  router.push(`/${resp.key}`);
+                }}
                 items={[
                   {
-                    key: "1",
+                    key: "manager-dashboard",
                     icon: <img src="/assets/menu.svg" />,
                     label: "Dashboard",
                   },
                   {
-                    key: "2",
+                    key: "assign-leads",
                     icon: <img src="/assets/target.svg" />,
                     label: "Assign Leads",
                   },
                   {
-                    key: "3",
+                    key: "deals",
                     icon: <img src="/assets/Deals.svg" />,
                     label: "Deals Status",
                     className: "deals-icon",
                   },
                   {
-                    key: "4",
+                    key: "agents",
                     icon: <img src="/assets/profile.svg" />,
                     label: "Agents",
                     className: "profile-icon",
                   },
                   {
-                    key: "5",
+                    key: "teams",
                     icon: <img src="/assets/Group.svg" />,
                     label: "teams",
                   },
@@ -92,7 +95,7 @@ export default function RootLayout({
                 <img src="/assets/collapse-icon.svg" />
               </div>
             </Sider>
-            <Layout>
+            <Layout className="body-container">
               <Header
                 style={{
                   padding: 0,
@@ -124,7 +127,7 @@ export default function RootLayout({
               </Header>
               <Content
                 style={{
-                  margin: "24px 67px",
+                  margin: "24px 12px 24px 67px",
                   marginLeft: !collapsed ? "187px" : "67px",
                   transition: "ease-in-out",
                   padding: 24,

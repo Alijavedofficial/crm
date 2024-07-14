@@ -4,20 +4,25 @@ import React, { useEffect, useState } from "react";
 import { Button, Table } from "antd";
 import type { TableColumnsType } from "antd";
 import { Pagination } from "antd";
-import "./assign-leads.scss";
 import { getAllUsers } from "@/services/users";
 import AssignLeadsModal from "./components/assign-lead-modal/assign-lead-modal";
 import QuickAddLead from "./components/add-lead-modal/add-lead-modal";
 import BulkUploadLead from "./components/bulk-upload-modal/bulk-upload-modal";
+import "./assign-leads.scss";
 
 interface DataType {
   key: React.Key;
   name: string;
   age: number;
   address: string;
+  status: string[];
 }
 
 const columns: TableColumnsType<DataType> = [
+  {
+    title: "",
+    dataIndex: "icons",
+  },
   {
     title: "Name",
     dataIndex: "name",
@@ -29,6 +34,10 @@ const columns: TableColumnsType<DataType> = [
   {
     title: "Email",
     dataIndex: "email",
+  },
+  {
+    title: "State",
+    dataIndex: "state",
   },
 ];
 

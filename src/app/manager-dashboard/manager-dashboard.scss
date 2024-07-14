@@ -5,10 +5,18 @@
 .overall-stats {
   width: calc(50% - 20px);
   display: flex;
-  flex-wrap: wrap;
   justify-content: start;
   align-items: start;
+  flex-direction: column;
   gap: 20px;
+  .w-100{
+    width: 100%;
+    display: flex;
+    gap: 12px;
+  }
+  .mt-12{
+    margin-top: 12px;
+  }
 }
 .overall-tables {
   display: flex;
@@ -19,7 +27,7 @@
   flex-flow: row wrap;
 }
 .main-stat-card {
-  width: 48%;
+  width: 100%;
   height: 170px;
 }
 .side-bar {

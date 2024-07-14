@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import "./revenue-table.scss";
 import { Avatar, Card, Input } from "antd";
 import { UserOutlined, DownOutlined, SearchOutlined } from "@ant-design/icons";
@@ -21,7 +21,7 @@ const RevenueTable = () => {
       <div className="table-heading">
         <div className="revenue-side">
           <span className="heading">Revenue</span>
-          <span className="sub-heading">Today's Deposit</span>
+          <span className="sub-heading">{`Today's Deposit`}</span>
         </div>
         <span className="stat-sum">₹ 288000</span>
       </div>

@@ -13,7 +13,13 @@
   }
 
   .header {
+    all: unset;
+    text-align: left;
     color: #ff6600;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
   }
 
   .select {
@@ -26,6 +32,7 @@
     width: 150px;
     height: 150px;
     margin: 0 auto;
+    margin-top: 12px;
   }
 
   .chart {
@@ -56,7 +63,52 @@
     margin-right: 5px;
   }
   .total {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
     margin-top: 10px;
-    color: #666;
+    color: #f15522;
+  }
+  .tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    .tabs-content {
+      width: 192px;
+      height: 30px;
+      border-radius: 50px;
+      border: 1px solid #ff6600;
+      display: flex;
+      .budget {
+        display: block;
+        padding-top: 6px;
+        width: 95px;
+        height: 28px;
+        border-radius: 50px 0px 0px 50px;
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        color: #f15522;
+      }
+      .quantity {
+        padding-top: 6px;
+        display: block;
+        width: 95px;
+        height: 28px;
+        border-radius: 0px 50px 50px 0px;
+        font-family: Poppins;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        color: #f15522;
+      }
+      .active-item {
+        background: #0a1629;
+      }
+    }
   }
 }
