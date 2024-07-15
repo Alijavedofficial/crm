@@ -13,8 +13,6 @@ import "./objective-chart.scss";
 
 ChartJS.register(DoughnutController, ArcElement, Tooltip, Legend);
 
-const { Option } = Select;
-
 interface ObjectiveChartProps {
   percentage: number;
   value: number;
@@ -52,7 +50,7 @@ const ObjectiveChart: React.FC<ObjectiveChartProps> = ({
         ],
       },
       options: {
-        cutout: "80%",
+        cutout: "95%",
         plugins: {
           datalabels: {
             display: false,
@@ -73,10 +71,12 @@ const ObjectiveChart: React.FC<ObjectiveChartProps> = ({
     <div className="objective-chart">
       <div className="container">
         <h3 className="header">Objectives</h3>
-        {/* <Select defaultValue="budget" className="select">
-          <Option value="budget">budget</Option>
-          <Option value="quantity">quantity</Option>
-        </Select> */}
+        <div className="tabs-wrapper">
+          <div className="tabs-content">
+            <span className="budget active-item">budget</span>
+            <span className="quantity">quantity</span>
+          </div>
+        </div>
         <div className="chartContainer">
           <canvas ref={chartRef} className="chart"></canvas>
           <div className="percentage">{percentage}%</div>

@@ -1,0 +1,141 @@
+.ant-card .ant-card-body {
+  padding: 10px !important;
+  border-radius: 0 0 8px 8px;
+}
+.agent-card-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 0px 5px 10px 0 rgba(196, 203, 214, .10);
+  padding: 0;
+  margin: 0 0 10px;
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  span, div, ul{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .agent-img{
+    width: 74px;
+    height: 74px;
+    border: 100%;
+    margin-right: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .name-wrapper{
+    display: inline;
+    margin-right: 50px;
+  .details{
+    display: inline-block;
+    vertical-align: middle;
+    .name{
+      color: #0A1629;
+      font-size: 14px;
+      font-weight: 400;
+      display: block;
+    }
+    .status{
+      color: #91929E;
+      font-weight: normal;
+      font-size: 12px;
+      .status-number{
+        background-color: #15BC4A;
+        width: 30px;
+        height: 18px;
+        font-size: 10px;
+        font-weight: 400;
+        color: #fff;
+        border-radius: 16px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+      }
+    }
+  }
+}
+  .title{
+    margin: 0;
+    color: #91929E;
+    font-size: 14px;
+  }
+  .status-list{
+    display: inline-block;
+    vertical-align: middle;
+    li{
+      background-color: #F4F9FD;
+      border-radius: 24px;
+      margin-right: 15px;
+      font-size: 14px;
+      height: 71px;
+      width: 71px;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 10px;
+      .title{
+        color: #91929E;
+      }
+      .number{
+        color: #0A1629;
+        font-weight: 400;
+      }
+    }
+  }
+  .divider{
+    width: 1px;
+    height: 71px;
+    background-color: #E4E6E8;
+    margin: 0 40px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .language{
+   .lang-list{
+    font-size: 14px;
+    color: #0A1629;
+    display: inline-block;
+    vertical-align: middle;
+    li{
+      background-color: #F4F9FD;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      border-radius: 24px;
+      padding: 5px 10px;
+    }
+  }
+  }
+  .designation{
+    font-size: 12px;
+    font-weight: 500;
+    color: #0A1629;
+  }
+  .team{
+    .team-name{
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 60px;
+    }
+    .more{
+      border: 0;
+        background-color: transparent;
+        box-shadow: none;
+      .more-btn{
+        border: 0;
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+    .more-dropdown{
+      border: 1px solid #F48035;
+    }
+
+  }
+ 
+}
