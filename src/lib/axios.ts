@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://3.29.131.240/api",
+  baseURL: "https://bollycrm-com.preview-domain.com/cms-backend-o/api",
   headers: {
     "Content-Type": "application/json",
   },
