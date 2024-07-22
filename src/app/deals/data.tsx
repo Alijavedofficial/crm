@@ -24,9 +24,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-      View Details {'>'}
-    </Button>
+        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </div>
     ),
     contact: "1234567890",
@@ -42,9 +40,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-      View Details {'>'}
-    </Button>
+        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </div>
     ),
     contact: "1234567890",
@@ -60,9 +56,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-      View Details {'>'}
-    </Button>
+        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </div>
     ),
     contact: "1234567890",
@@ -78,9 +72,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-      View Details {'>'}
-    </Button>
+        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </div>
     ),
     contact: "1234567890",
@@ -96,9 +88,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-      View Details {'>'}
-    </Button>
+        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </div>
     ),
     contact: "1234567890",
@@ -114,9 +104,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-    View Details {'>'}
-  </Button>
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
     </div>
     ),
     contact: "1234567890",
@@ -132,9 +120,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-    View Details {'>'}
-  </Button>
+      <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
     </div>
     ),
     contact: "1234567890",
@@ -150,9 +136,7 @@ export const assignedLeads = [
     status: ["active"],
     agent: (
       <div style={{ display:"flex" ,justifyContent:"space-between"}} >
-        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /><Button type="text" danger>
-      View Details {'>'}
-    </Button>
+        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
       </div>
     ),
     contact: "1234567890",

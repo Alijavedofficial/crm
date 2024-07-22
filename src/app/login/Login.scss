@@ -28,6 +28,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  font-family: Poppins;
 }
 .ant-form {
   label {
@@ -58,9 +59,34 @@
   font-style: normal;
   font-weight: 600 !important;
   line-height: normal !important;
-  &:hover{
+  &:hover {
     background: #f48035 !important;
     color: #000 !important;
+  }
+}
+.email-field {
+  input {
+    &::placeholder {
+      font-family: Poppins;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: #7d8592;
+    }
+  }
+}
+.password-field {
+  margin-bottom: unset !important;
+  input {
+    &::placeholder {
+      font-family: Poppins;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: #7d8592;
+    }
   }
 }
 .remember-me-section {
@@ -70,19 +96,23 @@
   align-items: start;
   a {
     margin-top: 6px;
-    color: #7D8592 !important;
+    color: #7d8592 !important;
   }
 }
 .remember-me {
-  color: #7d8592;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px; /* 171.429% */
+  font-family: Poppins !important;
+  color: #7d8592 !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 24px !important; /* 171.429% */
 }
 .ant-checkbox-checked {
   .ant-checkbox-inner {
-    background-color: #f48035 !important;
-    border-color: #f48035 !important;
+    background-color: transparent !important;
+    border-color: unset !important;
+      &::after{
+      border-color: #f48035 !important;
+    }
   }
 }
