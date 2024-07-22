@@ -15,7 +15,7 @@ const TeamsTable = ({ data }: { data: Array<any> }) => {
         </div>
       </div>
       <div className="data-container">
-        {data.map((item) => (
+        {data?.map((item) => (
           <div className="team-member-entity" key={item.id}>
             <div className="table-items-content">
               <span className="team-name">{item.name}</span>

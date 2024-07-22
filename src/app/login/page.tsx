@@ -29,26 +29,26 @@ const Login = () => {
           <img src="/assets/loginImage.svg"></img>
         </div>
         <div className="loginForm">
-          <span className="loginHeading">Sign in</span>
+          <span className="loginHeading">Sign In</span>
           <Form
             layout="vertical"
             onValuesChange={() => {}}
             className="login-fields"
             onFinish={onSubmit}
           >
-            <Form.Item name="email" label="Email Address">
+            <Form.Item name="email" label="Email Address" className="email-field">
               <Input
+                prefix={<img src="/assets/email-icon.svg" />}
                 placeholder="Enter your email address"
                 className="custom-input"
                 type="email"
                 required
               />
             </Form.Item>
-            <Form.Item name="password" label="Password">
-              <Input
+            <Form.Item name="password" label="Password" className="password-field">
+              <Input.Password
                 placeholder="Enter your password"
                 className="custom-input"
-                type="password"
                 required
               />
             </Form.Item>
@@ -57,7 +57,7 @@ const Login = () => {
                 <Checkbox className="remember-me">Remember me</Checkbox>
               </Form.Item>
               <Link href={"/forgot-password"}>
-                <span className="forgot-link">Forgot Password</span>
+                <span className="forgot-link">Forgot Password?</span>
               </Link>
             </div>
             <Form.Item>

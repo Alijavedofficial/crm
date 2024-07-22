@@ -1,0 +1,160 @@
+
+.drawer-container {
+    margin: 30px 0 0 30px;
+    font-weight: 700;
+  
+    .ant-select-selection-item{
+      font-weight: 700;
+    }
+  
+    .Row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+  
+      .agent-details {
+        display: flex;
+        height: 59px;
+        width: 166px;
+        flex-direction: column;
+  
+        .header {
+          font-weight: 700;
+          color: #f48035;
+          font-size: 14px;
+        }
+  
+        .details {
+          background: #F3F3F3;
+          border-radius: 15px;
+          display: flex;
+          height: 35px;
+          width: 166px;
+          align-items: center;
+        }
+      }
+  
+      .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 250px;
+      }
+  
+      .Date {
+        display: flex;
+        height: 42px;
+        width: 118px;
+        flex-direction: column;
+  
+        .date {
+          background: #F3F3F3;
+          border-radius: 15px;
+          display: flex;
+          height: 35px;
+          width: 166px;
+          align-items: center;
+        }
+      }
+  
+      .customer-details {
+        height: 51px;
+        width: 154px;
+        display: flex;
+        flex-direction: column;
+  
+        & .header {
+          font-size: 14px;
+          color: #B5B7C0;
+        }
+  
+        .name {
+          font-size: 24px;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+  
+      .actionButtons {
+        background: #f48035;
+        border-radius: 14px 0px 0px 14px;
+        display: flex;
+        align-items: center;
+  
+        .ant-btn {
+          color: #fff;
+        }
+      }
+  
+      .assign-btn {
+        width: 158px;
+        height: 48px;
+        color: #fff;
+        margin: 20px
+      }
+    }
+  }
+  
+  .activityContainer{
+    background-color: #F5F4F4;
+    .Row{
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .date{
+        font-size: 14px;
+        font-weight: 700;
+        color: #7D8592;
+        background-color: white;
+        border-radius: 20px;
+        width: 168px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+      }
+     
+    }
+    .activity{
+      font-size: 14px;
+      color: #7D8592;
+      border-radius: 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: start;
+      padding: 30px;
+      .attachment{
+        display: flex;
+        margin-top: 20px;
+        padding: 0 10px 0 10px;
+        background-color: white;
+        border-radius: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 418px;
+        height: 40px;
+        span{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+
+        }
+      
+      }
+    }
+  }
+  
+  .title {
+    font-weight: 700;
+    color: #f48035;
+    font-size: 14px;
+    margin: 0 0 8px 0;
+  }

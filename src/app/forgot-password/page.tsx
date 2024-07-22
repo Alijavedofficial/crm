@@ -22,6 +22,7 @@ export default function ForgotPassword() {
           >
             <Form.Item label="Email Address">
               <Input
+                prefix={<img src="/assets/email-icon.svg" />}
                 placeholder="Enter your email address"
                 className="custom-input"
               />

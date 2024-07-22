@@ -1,12 +1,13 @@
 "use client";
 
-import React, {  } from "react";
+import React, { useState } from "react";
 import { Button, Layout, Menu, Select, Table, Tag } from "antd";
 import type { TableColumnsType } from "antd";
 import { Pagination } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { assignedLeads, itemss } from "./data";
 import "./deals.scss";
+import SideDrawer from "./components/drawer/page";
 
 interface DataType {
   key: React.Key;
@@ -16,59 +17,74 @@ interface DataType {
   status: string[];
 }
 
-const columns: TableColumnsType<DataType> = [
-  {
-    title: "",
-    dataIndex: "icons",
-  },
-  {
-    title: "Name",
-    dataIndex: "name",
-  },
-  {
-    title: "Phone",
-    dataIndex: "contact",
-  },
-  {
-    title: "Email",
-    dataIndex: "email",
-  },
-  {
-    title: "Country",
-    dataIndex: "country",
-  },
-  {
-    title: "Status",
-    dataIndex: "status",
-    render: (_, { status }) => (
-      <>
-        {status.map((status) => {
-          let color = "#3F8CFF1F";
-          return (
-            <Tag style={{ color: "#3F8CFF" }} color={color} key={status}>
-              {status}
-            </Tag>
-          );
-        })}
-      </>
-    ),
-  },
-  {
-    title: "Agent",
-    dataIndex: "agent",
-  },
-];
-
 const App: React.FC = () => {
+  const [isDeatilsOpen, setIsDetailsOpen] = useState(false);
+
+  const columns: TableColumnsType<DataType> = [
+    {
+      title: "",
+      dataIndex: "icons",
+    },
+    {
+      title: "Name",
+      dataIndex: "name",
+    },
+    {
+      title: "Phone",
+      dataIndex: "contact",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+    },
+    {
+      title: "Country",
+      dataIndex: "country",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      render: (_, { status }) => (
+        <>
+          {status.map((status) => {
+            let color = "#3F8CFF1F";
+            return (
+              <Tag style={{ color: "#3F8CFF" }} color={color} key={status}>
+                {status}
+              </Tag>
+            );
+          })}
+        </>
+      ),
+    },
+    {
+      title: "Agent",
+      dataIndex: "agent",
+    },
+    {
+      title: "",
+      dataIndex: "x",
+      render: () => (
+        <Button onClick={() => setIsDetailsOpen(true)} type="text" danger>
+          View Details {">"}
+        </Button>
+      ),
+    },
+  ];
+
   return (
     <div
       style={{ marginTop: "-48px", marginLeft: "-24px" }}
       className="assign-leads-wrapper"
     >
       <Layout hasSider={true}>
-        <Sider theme="light" width={215} style={{
-          height:'100vh'
-        }}>
+        <Sider
+          theme="light"
+          width={215}
+          style={{
+            height: "100vh",
+          }}
+        >
           <Menu style={{ padding: "24px" }} items={itemss} />
         </Sider>
         <Layout>
@@ -128,6 +144,7 @@ const App: React.FC = () => {
                 showSizeChanger={false}
               />
             </div>
+            <SideDrawer open={isDeatilsOpen} setOpen={setIsDetailsOpen} key={'details-modal'}  />
           </div>
         </Layout>
       </Layout>
