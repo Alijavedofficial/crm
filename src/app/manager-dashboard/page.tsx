@@ -32,7 +32,7 @@ const App: React.FC = () => {
   const retriveAllTeams = async () => {
     try {
       const teams = await getAllTeams();
-      setTeams(teams.data);
+      setTeams(teams.data?.data);
     } catch {}
   };
 
