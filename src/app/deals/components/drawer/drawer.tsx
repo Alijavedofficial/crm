@@ -1,3 +1,5 @@
+"use client"
+
 import {
   UserOutlined,
   PhoneFilled,
@@ -8,12 +10,12 @@ import {
 import { Drawer, Avatar, Button, Divider, Select } from "antd";
 import React from "react";
 import "./drawer.scss";
-interface SideDrawerProps {
+
+
+const SideDrawer = ({ open, setOpen } :{
   open: boolean;
   setOpen: (open: boolean) => void;
-}
-
-const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
+}) => {
   const onClose = () => {
     setOpen(false);
   };
@@ -42,7 +44,7 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
       onClose={onClose}
       open={open}
       closable={false}
-      styles={{ body: { padding: "0px" } }}
+      bodyStyle={{ padding: "0px" }}
     >
       <div className="drawer-container">
         <div style={{ width: "800px" }} className="Row">
@@ -65,16 +67,14 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
           </div>
           <div className="actionButtons">
             <Button type="link">
-              {" "}
-              <UserOutlined></UserOutlined>Call Now
+              <UserOutlined /> Call Now
             </Button>
             <Divider
               type="vertical"
               style={{ height: "20px", background: "#DBEDFF" }}
             />
             <Button type="link">
-              {" "}
-              <PhoneFilled></PhoneFilled> Whatsapp
+              <PhoneFilled /> Whatsapp
             </Button>
             <Divider
               type="vertical"
@@ -85,15 +85,14 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
               }}
             />
             <Button type="link">
-              {" "}
-              <PhoneFilled></PhoneFilled>SMS
+              <PhoneFilled /> SMS
             </Button>
             <Divider
               type="vertical"
               style={{ height: "20px", background: "#DBEDFF" }}
             />
             <Button type="link">
-              <PhoneFilled></PhoneFilled>Email
+              <PhoneFilled /> Email
             </Button>
           </div>
         </div>
@@ -107,8 +106,8 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
                 onChange={handleChange}
                 options={[
                   { value: "Agent 1", label: "Agent 1" },
-                  { value: " Agent 2", label: "Agent 2" },
-                  { value: "Agent3  ", label: "Agent 3" },
+                  { value: "Agent 2", label: "Agent 2" },
+                  { value: "Agent 3", label: "Agent 3" },
                   { value: "Clear Filter", label: "Clear Filter" },
                 ]}
               />
@@ -121,8 +120,8 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
                 onChange={handleChange}
                 options={[
                   { value: "Agent 1", label: "Agent 1" },
-                  { value: " Agent 2", label: "Agent 2" },
-                  { value: "Agent3  ", label: "Agent 3" },
+                  { value: "Agent 2", label: "Agent 2" },
+                  { value: "Agent 3", label: "Agent 3" },
                   { value: "Clear Filter", label: "Clear Filter" },
                 ]}
               />
@@ -140,19 +139,16 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
                   variant="borderless"
                   options={[
                     { value: "Agent 1", label: "Agent 1" },
-                    { value: " Agent 2", label: "Agent 2" },
-                    { value: "Agent3  ", label: "Agent 3" },
-                    {
-                      value: "Clear Filter",
-                      label: "Clear Filter",
-                    },
+                    { value: "Agent 2", label: "Agent 2" },
+                    { value: "Agent 3", label: "Agent 3" },
+                    { value: "Clear Filter", label: "Clear Filter" },
                   ]}
                 />
               </div>
             </div>
             <div>
               <p className="title">Whatsapp Number</p>
-              <p> +919837744472</p>
+              <p>+919837744472</p>
             </div>
             <div>
               <p className="title">State</p>
@@ -162,8 +158,8 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
                 onChange={handleChange}
                 options={[
                   { value: "Agent 1", label: "Agent 1" },
-                  { value: " Agent 2", label: "Agent 2" },
-                  { value: "Agent3  ", label: "Agent 3" },
+                  { value: "Agent 2", label: "Agent 2" },
+                  { value: "Agent 3", label: "Agent 3" },
                   { value: "Clear Filter", label: "Clear Filter" },
                 ]}
               />
@@ -186,8 +182,8 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
                 onChange={handleChange}
                 options={[
                   { value: "Agent 1", label: "Agent 1" },
-                  { value: " Agent 2", label: "Agent 2" },
-                  { value: "Agent3  ", label: "Agent 3" },
+                  { value: "Agent 2", label: "Agent 2" },
+                  { value: "Agent 3", label: "Agent 3" },
                   { value: "Clear Filter", label: "Clear Filter" },
                 ]}
               />
@@ -231,12 +227,12 @@ const SideDrawer: React.FC<SideDrawerProps> = ({ open, setOpen }) => {
       <div className="activityContainer">
         <div style={{ width: "475px" }} className="Row">
           <p className="title">Activity</p>
-          <div className="date">Friday , 07 2024</div>
+          <div className="date">Friday, 07 2024</div>
         </div>
         <div className="activity">
           <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <p style={{ margin: "0", fontSize: "700" }}>Robert</p>
+            <p style={{ margin: "0", fontWeight: 700 }}>Robert</p>
             <p style={{ margin: "0" }}>
               lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua

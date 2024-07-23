@@ -7,7 +7,7 @@ import { Pagination } from "antd";
 import Sider from "antd/es/layout/Sider";
 import { assignedLeads, itemss } from "./data";
 import "./deals.scss";
-import SideDrawer from "./components/drawer/page";
+import SideDrawer from "./components/drawer/drawer";
 
 interface DataType {
   key: React.Key;
