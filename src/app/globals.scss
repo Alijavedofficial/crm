@@ -25,20 +25,20 @@ body {
 
 .mg-das-wrapper {
   min-height: 100vh;
-  .body-container{
+  .body-container {
     width: fit-content !important;
   }
   .side-bar {
     background: #f48035;
-    .platfprm-logo{
+    .platfprm-logo {
       position: absolute;
       left: 18px;
-      top:16px
+      top: 16px;
     }
-    .expanded-platform-logo{
+    .expanded-platform-logo {
       position: absolute;
       left: 27px;
-      top:16px
+      top: 16px;
     }
     .ant-layout-sider-children {
       margin-top: 28px;
@@ -116,6 +116,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 8px;
+    margin-right: 20px;
   }
   .profile-section {
     display: flex;
@@ -124,4 +125,3 @@ body {
     gap: 2px;
   }
 }
-

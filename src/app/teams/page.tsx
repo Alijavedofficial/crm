@@ -6,7 +6,7 @@ import { Pagination } from "antd";
 import "./teams.scss";
 import { getAllUsers } from "@/services/users";
 import TeamCard from "./components/agent-card/team-card";
-
+import { useRouter } from "next/navigation";
 
 interface DataType {
   key: React.Key;
@@ -17,57 +17,57 @@ interface DataType {
 
 const prod = [
   {
-    team: 'Whatsapp Agent',
+    team: "Whatsapp Agent",
     statusNumber: 203,
-    teamLead: 'Violet Robbins',
-    teamLeadAvatar: '/assets/user.png',
+    teamLead: "Violet Robbins",
+    teamLeadAvatar: "/assets/user.png",
     revenue: 28800,
     agents: [
-      { name: 'Agent 1', avatar: '/assets/user.png' },
-      { name: 'Agent 2', avatar: '/assets/person.png' },
-      { name: 'Agent 3', avatar: '/assets/user.png' },
-      { name: 'Agent 4', avatar: '/assets/person.png' },
-      { name: 'Agent 5', avatar: '/assets/user.png' }
+      { name: "Agent 1", avatar: "/assets/user.png" },
+      { name: "Agent 2", avatar: "/assets/person.png" },
+      { name: "Agent 3", avatar: "/assets/user.png" },
+      { name: "Agent 4", avatar: "/assets/person.png" },
+      { name: "Agent 5", avatar: "/assets/user.png" },
     ],
-    onClick: () => { }
+    onClick: () => {},
   },
   {
-    team: 'Team 1',
+    team: "Team 1",
     statusNumber: 203,
-    teamLead: 'Violet Robbins',
-    teamLeadAvatar: '/assets/person.png',
+    teamLead: "Violet Robbins",
+    teamLeadAvatar: "/assets/person.png",
     revenue: 28800,
     agents: [
-      { name: 'Agent 1', avatar: '/assets/user.png' },
-      { name: 'Agent 2', avatar: '/assets/person.png' },
-      { name: 'Agent 3', avatar: '/assets/user.png' },
-      { name: 'Agent 4', avatar: '/assets/person.png' },
-      { name: 'Agent 5', avatar: '/assets/user.png' }
+      { name: "Agent 1", avatar: "/assets/user.png" },
+      { name: "Agent 2", avatar: "/assets/person.png" },
+      { name: "Agent 3", avatar: "/assets/user.png" },
+      { name: "Agent 4", avatar: "/assets/person.png" },
+      { name: "Agent 5", avatar: "/assets/user.png" },
     ],
-    onClick: () => { }
-  }
+    onClick: () => {},
+  },
 ];
 
 const handleMenuClick = (e: any) => {
-  console.log('click', e);
+  console.log("click", e);
 };
 const items = [
   {
-    label: '1st menu item',
-    key: '1',
+    label: "1st menu item",
+    key: "1",
   },
   {
-    label: '2nd menu item',
-    key: '2',
+    label: "2nd menu item",
+    key: "2",
   },
   {
-    label: '3rd menu item',
-    key: '3',
+    label: "3rd menu item",
+    key: "3",
     danger: true,
   },
   {
-    label: '4rd menu item',
-    key: '4',
+    label: "4rd menu item",
+    key: "4",
     danger: true,
     disabled: true,
   },
@@ -78,6 +78,7 @@ const menuProps = {
 };
 
 const App: React.FC = () => {
+  const router = useRouter();
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
   const [unassignedLeads, setUnassignedLeads] = useState([]);
   useEffect(() => {
@@ -90,7 +91,7 @@ const App: React.FC = () => {
       setUnassignedLeads(
         users.data.filter((item: any) => item.status === "inactive")
       );
-    } catch { }
+    } catch {}
   };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
@@ -103,6 +104,10 @@ const App: React.FC = () => {
     onChange: onSelectChange,
   };
 
+  const handleAddTeam = () => {
+    router.push("add-team");
+  };
+
   return (
     <>
       <div className="header-wrapper">
@@ -110,15 +115,15 @@ const App: React.FC = () => {
           <span className="heading">Teams</span>
         </div>
         <div className="btn-wrapper">
-          <Button className="agent-btn" >
-          <img src="/assets/add.svg" alt="add" className="add"/> Add Teams
+          <Button className="agent-btn" onClick={handleAddTeam}>
+            <img src="/assets/add.svg" alt="add" className="add" /> Add Teams
           </Button>
         </div>
       </div>
       <div className="agent-cards">
         <ul className="agent-cards-list">
           <li>
-            <TeamCard items={prod}/>
+            <TeamCard items={prod} />
           </li>
         </ul>
         <div className="assign-leads">
