@@ -1,8 +1,9 @@
 "use client";
-import React from 'react';
-import { Dropdown, Menu, Button, Card, Avatar, Badge } from 'antd';
+import React from "react";
+import { Dropdown, Menu, Button, Card, Avatar, Badge } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import "./team-card.scss";
+import { useRouter } from "next/navigation";
 
 interface TeamUser {
   team: string;
@@ -21,28 +22,35 @@ interface TeamCardProps {
 const TeamCard: React.FC<TeamCardProps> = ({ items }) => {
   const options = [
     {
-      key: '1',
-      label: 'Modify',
+      key: "1",
+      label: "Modify",
     },
     {
-      key: '2',
-      label: 'Deactivate',
+      key: "2",
+      label: "Deactivate",
     },
     {
-      key: '3',
-      label: 'Reactivate',
+      key: "3",
+      label: "Reactivate",
     },
   ];
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/team-view`);
+  };
 
   return (
     <div className="team-card-container">
       {items.map((item, index) => (
-        <Card key={index} className="agent-card-wrapper">
+        <Card key={index} className="agent-card-wrapper" onClick={handleClick}>
           <div className="name-wrapper">
             <div className="details">
               <span className="name-title">{item.team}</span>
               <span className="status">
-                Current Status <span className="status-number">{item.statusNumber}</span>
+                Current Status{" "}
+                <span className="status-number">{item.statusNumber}</span>
               </span>
             </div>
           </div>
@@ -62,19 +70,21 @@ const TeamCard: React.FC<TeamCardProps> = ({ items }) => {
           </ul>
           <div className="divider"></div>
           <div className="revenue">
-            <p className="rev-title">Revenue<span className="subtitle">${item.revenue}</span></p>
+            <p className="rev-title">
+              Revenue<span className="subtitle">${item.revenue}</span>
+            </p>
           </div>
           <div className="divider"></div>
           <span>Team Lead</span>
           <div className="team-lead">
-            <div className='person-rank'>
+            <div className="person-rank">
               <img src={item.teamLeadAvatar} alt="user" className="prem-user" />
               <p className="name-title">{item.teamLead}</p>
-              <img src="/assets/crown.png" alt="premium" className='crown'/>
+              <img src="/assets/crown.png" alt="premium" className="crown" />
             </div>
           </div>
           <div className="divider"></div>
-          <span className='agents-title'>Agents</span>
+          <span className="agents-title">Agents</span>
           <div className="agents">
             <div className="agent-avatars">
               {item.agents.slice(0, 3).map((agent, idx) => (
@@ -92,7 +102,9 @@ const TeamCard: React.FC<TeamCardProps> = ({ items }) => {
             placement="bottomRight"
             overlayClassName="more-dropdown"
           >
-            <Button className="more-btn"><img src="/assets/more.svg" alt="more" /></Button>
+            <Button className="more-btn">
+              <img src="/assets/more.svg" alt="more" />
+            </Button>
           </Dropdown>
         </Card>
       ))}

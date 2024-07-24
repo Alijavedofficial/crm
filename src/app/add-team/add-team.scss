@@ -1,0 +1,164 @@
+.add-team-wrapper {
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Poppins;
+  .container {
+    display: flex;
+    flex-direction: column;
+    .team-name {
+      color: #f48035;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .info-section {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      .half-width {
+        width: 50%;
+      }
+      .input-wrapper {
+        border: 1px solid #d8e0f0;
+        border-radius: 12px;
+        padding: 6px;
+      }
+    }
+    .agent-selection-section {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      border: 1px solid #d8e0f0;
+      border-radius: 12px;
+    }
+    .half-width {
+      width: 50%;
+    }
+    .border-right {
+      border-right: 1px solid #d8e0f0;
+    }
+    .right-search-wrapper {
+      border-bottom: 1px solid #d8e0f0;
+      border-radius: 12px 0px 0px 0px;
+      padding: 6px;
+    }
+
+    .left-section,
+    .right-section {
+      padding: 20px;
+      .agent-list {
+        margin-top: 20px;
+        .agent-item {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 20px;
+          width: 100%;
+
+          .ant-checkbox-wrapper {
+            width: 100% !important;
+          }
+
+          .agent-checkbox-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+          .agent-image {
+            width: 36px;
+            height: 34px;
+            border-radius: 50px;
+            margin-left: 25px;
+          }
+          .agent-name {
+            color: #0a1629;
+            font-size: 16px;
+            font-weight: 400;
+            margin-left: 10px;
+          }
+        }
+      }
+      .selected-agent-title {
+        color: #f48035;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .selected-agent-layout {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: center;
+        .selected-agent {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          background-color: #f3f3f3;
+          width: fit-content;
+          border-radius: 20px;
+
+          .selected-agent-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin-right: 10px;
+          }
+          span {
+            color: #0a1629;
+            font-size: 16px;
+            font-weight: 500;
+            margin-left: 10px;
+          }
+
+          .remove-agent-icon {
+            font-size: 20px;
+            color: #f48035;
+            margin-top: -35px;
+            visibility: hidden;
+            cursor: pointer;
+          }
+
+          &:hover .remove-agent-icon {
+            visibility: visible;
+          }
+        }
+      }
+    }
+    .save-btn-container {
+      margin-top: 20px;
+      align-self: center;
+      .save-btn {
+        all: unset;
+        width: 158px;
+        height: 48px;
+        border-radius: 14px;
+        background-color: #f48035;
+        box-shadow: 0px 6px 12px 0px rgba(63, 140, 255, 0.26);
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        cursor: pointer;
+        text-align: center;
+        &:hover {
+          border-radius: 14px;
+          background-color: darken(#f48035, 10%);
+          box-shadow: 0px 6px 12px 0px rgba(63, 140, 255, 0.26);
+          color: #fff;
+        }
+      }
+    }
+
+    .ant-input {
+      margin-bottom: 0px !important;
+    }
+    .ant-input-outlined {
+      border-color: transparent !important;
+    }
+    .ant-input-affix-wrapper {
+      border-radius: 12px !important;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-.header-wrapper{
+.header-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,9 +22,14 @@
     border-radius: 14px;
     margin-left: 20px;
     box-shadow: 0px 6px 12px 0px rgba(244, 128, 53, 0.25) !important;
+    &:hover {
+      background: #f48035 !important;
+      color: #fff !important;
+      border: none !important;
+    }
   }
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
   list-style: none;

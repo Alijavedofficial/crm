@@ -1,9 +1,10 @@
 "use client";
 
-import { Input, Layout, Menu } from "antd";
+import { Button, Dropdown, Input, Layout, Menu } from "antd";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import "./globals.scss";
+import { removeToken } from "./utils/user-helpers";
 
 const { Header, Sider, Content } = Layout;
 
@@ -17,6 +18,19 @@ export default function RootLayout({
   const router = useRouter();
 
   const authRoutes = ["/login", "/forgot-password"];
+
+  const handleLogout = async () => {
+    removeToken();
+    router.push("/login");
+  };
+
+  const options = [
+    {
+      key: "logout",
+      label: "Logout",
+      onClick: handleLogout,
+    },
+  ];
 
   return (
     <html lang="en">
@@ -119,10 +133,17 @@ export default function RootLayout({
                     placeholder="Search"
                   />
                   <img src="/assets/notifications.svg" />
-                  <div className="profile-section">
-                    <img src="/assets/photo.svg" />
-                    <img src="/assets/right.svg" />
-                  </div>
+
+                  <Dropdown
+                    overlay={<Menu items={options} />}
+                    placement="bottomRight"
+                    overlayClassName="more-dropdown"
+                  >
+                    <div className="profile-section">
+                      <img src="/assets/photo.svg" />
+                      <img src="/assets/right.svg" />
+                    </div>
+                  </Dropdown>
                 </div>
               </Header>
               <Content
