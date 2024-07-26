@@ -6,7 +6,7 @@ import "./Login.scss";
 import Link from "next/link";
 import { loginApi } from "@/services/auth";
 import { useRouter } from "next/navigation";
-import { setToken } from "../utils/user-helpers";
+import { setToken, setUser } from "../utils/user-helpers";
 
 const Login = () => {
   const router = useRouter();
@@ -18,6 +18,7 @@ const Login = () => {
         password: values.password,
       });
       setToken(resp?.data?.token);
+      setUser(resp?.data)
       router.push("/manager-dashboard");
     } catch {}
   };

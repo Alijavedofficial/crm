@@ -1,10 +1,9 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState, ComponentType } from 'react';
+"use client"
 
-interface User {
-  username: string;
-  role: 'admin' | 'user';
-}
+import { useRouter } from 'next/navigation';
+import { useEffect, useState, ComponentType } from 'react';
+import { getUser } from '../utils/user-helpers';
+
 
 const withAuth = (WrappedComponent: ComponentType<any>, allowedRoles: string[]) => {
   return (props: any) => {
@@ -14,7 +13,7 @@ const withAuth = (WrappedComponent: ComponentType<any>, allowedRoles: string[]) 
     useEffect(() => {
       const token = localStorage.getItem('token');
       if (token) {
-        const user:any = localStorage.getItem('user');
+        const user:any = getUser();
         if (user && allowedRoles.includes(user.profile.user.position)) {
           setIsAuthenticated(true);
         } else {

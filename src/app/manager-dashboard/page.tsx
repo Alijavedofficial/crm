@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, Layout, Menu, theme } from "antd";
 import "./manager-dashboard.scss";
 import StatsCard from "./components/stats-card/stats-card";
 import RevenueTable from "./components/revenue-table/revenue-table";
