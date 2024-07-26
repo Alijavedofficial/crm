@@ -12,6 +12,7 @@ import { getAllTeams } from "@/services/teams";
 import TransactionsTable from "./components/transactions-table/transactions-table";
 import SalesForecast from "./components/sales-forecast/sales-forecast";
 import ObjectiveChart from "./components/objective-chart/objective-chart";
+import withAuth from "../HOC/withAuth";
 
 const App: React.FC = () => {
   const [agents, setAgents] = useState([]);
@@ -105,4 +106,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default withAuth(App, ['Manager']);;
