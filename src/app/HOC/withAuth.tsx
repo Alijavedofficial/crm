@@ -14,7 +14,7 @@ const withAuth = (WrappedComponent: ComponentType<any>, allowedRoles: string[]) 
       const token = localStorage.getItem('token');
       if (token) {
         const user:any = getUser();
-        if (user && allowedRoles.includes(user.profile.user.position)) {
+        if (user && allowedRoles.includes(user.profile?.user.position)) {
           setIsAuthenticated(true);
         } else {
           Router.replace('/login');

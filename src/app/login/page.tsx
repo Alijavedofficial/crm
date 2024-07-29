@@ -17,9 +17,11 @@ const Login = () => {
         email: values.email,
         password: values.password,
       });
-      setToken(resp?.data?.token);
-      setUser(resp?.data)
-      router.push("/manager-dashboard");
+      if (resp) {
+        setToken(resp?.data?.token);
+        setUser(resp?.data);
+        router.push(`/${resp.data.profile.user.position.toLowerCase()}-dashboard`);
+      }
     } catch {}
   };
 
@@ -37,7 +39,11 @@ const Login = () => {
             className="login-fields"
             onFinish={onSubmit}
           >
-            <Form.Item name="email" label="Email Address" className="email-field">
+            <Form.Item
+              name="email"
+              label="Email Address"
+              className="email-field"
+            >
               <Input
                 prefix={<img src="/assets/email-icon.svg" />}
                 placeholder="Enter your email address"
@@ -46,7 +52,11 @@ const Login = () => {
                 required
               />
             </Form.Item>
-            <Form.Item name="password" label="Password" className="password-field">
+            <Form.Item
+              name="password"
+              label="Password"
+              className="password-field"
+            >
               <Input.Password
                 placeholder="Enter your password"
                 className="custom-input"
