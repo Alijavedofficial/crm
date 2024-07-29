@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Button, Layout, Menu, theme } from "antd";
 import "./manager-dashboard.scss";
-import StatsCard from "./components/stats-card/stats-card";
+import StatsCard from "../shared/components/stats-card/stats-card";
 import RevenueTable from "./components/revenue-table/revenue-table";
 import AgentsTable from "./components/agents-table/agents-table";
 import TeamsTable from "./components/teams-table/teams-table";
@@ -12,6 +11,7 @@ import { getAllTeams } from "@/services/teams";
 import TransactionsTable from "./components/transactions-table/transactions-table";
 import SalesForecast from "./components/sales-forecast/sales-forecast";
 import ObjectiveChart from "./components/objective-chart/objective-chart";
+import withAuth from "../HOC/withAuth";
 
 const App: React.FC = () => {
   const [agents, setAgents] = useState([]);
@@ -105,4 +105,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default withAuth(App, ['Manager']);;

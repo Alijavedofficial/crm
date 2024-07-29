@@ -1,0 +1,18 @@
+.lead-dashboard-first-row {
+  display: flex;
+  gap: 12px;
+  .lead-stat-card {
+    width: 20%;
+  }
+}
+.lead-dashboard-second-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+  .revenue-table {
+    width: 30%;
+  }
+  .backlog-component{
+    width: 70%;
+  }
+}
