@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./manager-dashboard.scss";
-import StatsCard from "./components/stats-card/stats-card";
+import StatsCard from "../shared/components/stats-card/stats-card";
 import RevenueTable from "./components/revenue-table/revenue-table";
 import AgentsTable from "./components/agents-table/agents-table";
 import TeamsTable from "./components/teams-table/teams-table";
