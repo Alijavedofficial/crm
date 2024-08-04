@@ -1,0 +1,61 @@
+.sales-forecast {
+  width: 100%;
+  height: inherit;
+  padding: 0px 25px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(244, 128, 53, 0.25);
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  gap: 20px;
+  canvas {
+    width: 100% !important;
+    height: 342px !important;
+  }
+  .heading {
+    color: #f15522;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: -1px;
+  }
+  .chartButtons
+  {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  .buttoncustom
+  {
+    width: 2px;
+  }
+  .box
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .chartdata {
+    border-radius: 19px;
+    width: 247px;
+    height: 320px;
+    top: 228px;
+    left: 325px;
+    /* gap: 16px; */
+    display: flex;
+    align-items: center;
+    opacity: 0px;
+    background: #fff0e3;
+    justify-content: center;
+  }
+  .charDatatext {
+    font-family: Poppins;
+    font-size: 96px;
+    font-weight: 600;
+    line-height: 96px;
+    text-align: left;
+    color: #F15522;
+
+  }
+}
