@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Table } from "antd";
 import type { TableColumnsType } from "antd";
 import { Pagination } from "antd";
-import { getAllUsers } from "@/services/users";
+import { getAllUsers, getUnassignedLeads } from "@/services/users";
 import AssignLeadsModal from "./components/assign-lead-modal/assign-lead-modal";
 import QuickAddLead from "./components/add-lead-modal/add-lead-modal";
 import BulkUploadLead from "./components/bulk-upload-modal/bulk-upload-modal";
@@ -48,20 +48,17 @@ const App: React.FC = () => {
   const [quickAddLead, setQuickAddLead] = useState(false);
   const [bulkUploadLead, setBulkUploadLead] = useState(false);
   useEffect(() => {
-    retriveAllAgents();
+    retriveAllUnassignedLeads();
   }, []);
 
-  const retriveAllAgents = async () => {
+  const retriveAllUnassignedLeads = async () => {
     try {
-      const users = await getAllUsers();
-      setUnassignedLeads(
-        users.data.filter((item: any) => item.status === "inactive")
-      );
+      const unassignedLeads = await getUnassignedLeads();
+      setUnassignedLeads(unassignedLeads?.data?.data);
     } catch {}
   };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
-    console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
