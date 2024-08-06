@@ -1,3 +1,4 @@
+
 // "use client";
 
 // import { Line } from "react-chartjs-2";
@@ -267,3 +268,4 @@ const BarChart = () => {
 };
 
 export default BarChart;
+

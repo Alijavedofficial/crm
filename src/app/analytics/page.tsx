@@ -6,11 +6,14 @@ import Sider from "antd/es/layout/Sider";
 import { items } from "./data";
 import "./analytics.scss";
 import SalesForecast from "./sales-forecast/sales-forecast";
+<<<<<<< HEAD
 import LineChart from './lineChart/lineChart'
 import ProgressChart from './progress-bar/progress-bar';
 import PieChart from './pie-chart/pie-chart'
 
 
+=======
+>>>>>>> 5000ac1518ae5442623e3b39c9fbc35bde9f56f4
 const App: React.FC = () => {
   return (
     <div style={{ marginTop: "-48px", marginLeft: "-24px", display: "flex" }}>
@@ -37,9 +40,13 @@ const App: React.FC = () => {
       <div>
         <div className="forecast">
           <SalesForecast />
+<<<<<<< HEAD
           <LineChart />
           <ProgressChart />
           <PieChart />
+=======
+         
+>>>>>>> 5000ac1518ae5442623e3b39c9fbc35bde9f56f4
         </div>
       </div>
       <div>

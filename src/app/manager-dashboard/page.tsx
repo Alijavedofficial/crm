@@ -12,14 +12,20 @@ import TransactionsTable from "./components/transactions-table/transactions-tabl
 import SalesForecast from "./components/sales-forecast/sales-forecast";
 import ObjectiveChart from "./components/objective-chart/objective-chart";
 import withAuth from "../HOC/withAuth";
+import { homeRevenue, homeStatsData } from "@/services/home";
 
 const App: React.FC = () => {
   const [agents, setAgents] = useState([]);
   const [teams, setTeams] = useState([]);
+  const [stats, setStats] = useState<any>([]);
+  const [revenue, setRevenue] = useState<any>([]);
+
 
   useEffect(() => {
     retriveAllAgents();
     retriveAllTeams();
+    retriveHomeStats();
+    retriveRevenue();
   }, []);
 
   const retriveAllAgents = async () => {
@@ -36,29 +42,51 @@ const App: React.FC = () => {
     } catch {}
   };
 
+  const retriveHomeStats = async () => {
+    try {
+      const teams = await homeStatsData();
+      setStats(teams.data);
+    } catch {}
+  };
+
+  const retriveRevenue = async () => {
+    try {
+      const teams = await homeRevenue();
+      setRevenue(teams.data);
+    } catch {}
+  };
+
   return (
     <>
       <div className="mg-dashboard-first-row">
         <div className="overall-stats">
           <div className="w-100">
             <div className="main-stat-card">
-              <StatsCard name="Backlog" stats="288" icon="backlog.svg" />
+              <StatsCard
+                name="Backlog"
+                stats={stats?.BackLog}
+                icon="backlog.svg"
+              />
             </div>
             <div className="main-stat-card">
-              <StatsCard name="Followup" stats="288" icon="follow-up.svg" />
+              <StatsCard
+                name="Followup"
+                stats={stats?.FollowUp}
+                icon="follow-up.svg"
+              />
             </div>
           </div>
           <div className="w-100">
             <div className="main-stat-card">
-              <StatsCard name="Won" stats="288" icon="won.svg" />
+              <StatsCard name="Won" stats={stats?.Won} icon="won.svg" />
             </div>
             <div className="main-stat-card">
-              <StatsCard name="Lost" stats="288" icon="lost.svg" />
+              <StatsCard name="Lost" stats={stats?.Loss} icon="lost.svg" />
             </div>
           </div>
         </div>
         <div className="table-card">
-          <RevenueTable />
+          <RevenueTable data={revenue} />
         </div>
         <div className="table-card">
           <TransactionsTable />
@@ -105,4 +133,4 @@ const App: React.FC = () => {
   );
 };
 
-export default withAuth(App, ['Manager']);;
+export default withAuth(App, ["Manager"]);
