@@ -8,9 +8,11 @@ import { UserOutlined, DownOutlined, SearchOutlined } from "@ant-design/icons";
 const RevenueTable = ({
   title,
   showDescription = true,
+  data,
 }: {
   title?: string;
   showDescription?: boolean;
+  data?: any;
 }) => {
   const dummyData = [
     { id: 1, name: "John Doe", amount: 10000 },
@@ -33,7 +35,9 @@ const RevenueTable = ({
             <></>
           )}
         </div>
-        <span className="stat-sum">₹ 288000</span>
+        <span className="stat-sum">
+          ₹ {data?.original?.todaysDepositsSum ?? "28000"}
+        </span>
       </div>
 
       <Input
@@ -50,15 +54,25 @@ const RevenueTable = ({
           <div>Amount</div>
         </div>
 
-        {dummyData.map((item) => (
-          <div className="table-items-content" key={item.id}>
-            <Avatar size={48} icon={<UserOutlined />} />
-            <span className="agent-meta">
-              <div className="name-heading">{item.name}</div>
-              <div className="amount">+{formatAmount(item.amount)}</div>
-            </span>
-          </div>
-        ))}
+        {data?.original?.topDepositors?.length
+          ? data?.original?.topDepositors?.map((item: any) => (
+              <div className="table-items-content" key={item.id}>
+                <Avatar size={48} icon={<UserOutlined />} />
+                <span className="agent-meta">
+                  <div className="name-heading">{item.name}</div>
+                  <div className="amount">+{formatAmount(item.amount)}</div>
+                </span>
+              </div>
+            ))
+          : dummyData.map((item) => (
+              <div className="table-items-content" key={item.id}>
+                <Avatar size={48} icon={<UserOutlined />} />
+                <span className="agent-meta">
+                  <div className="name-heading">{item.name}</div>
+                  <div className="amount">+{formatAmount(item.amount)}</div>
+                </span>
+              </div>
+            ))}
         <div className="view-more">
           View More
           <DownOutlined
