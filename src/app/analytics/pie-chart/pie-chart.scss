@@ -1,0 +1,109 @@
+// SalesForecast.scss
+.sales-forecas {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+  h2 {
+    color: #ff6b00;
+    font-size: 18px;
+
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .timeline {
+    flex: 1;
+    margin-right: 20px;
+
+    .timepoints {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .timepoint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      border-right: 1px solid #d3d3d3;
+      padding: 10px;
+      
+
+      .label {
+        font-size: 13px;
+        color: #000;
+        margin-bottom: 100px;
+        
+      }
+
+      .value {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ff6b00;
+      }
+
+      .subtext {
+        font-size: 13px;
+        color: #000;
+      }
+    }
+
+    .progress-bar {
+      height: 4px;
+      background-color: #e0e0e0;
+      border-radius: 2px;
+      overflow: hidden;
+
+      .progress {
+        height: 100%;
+        background-color: #4ecdc4;
+      }
+    }
+  }
+
+  .chart {
+    position: relative;
+    width: 200px;
+    height: auto;
+
+    .chart-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      .total {
+        font-size: 15px;
+        color: #ff6b00;
+        display: block;
+      }
+
+      .amount {
+        font-size: 48px;
+        font-weight: bold;
+        color: #ff6b00;
+        display: block;
+        border-bottom: 1px solid #ff6b00;
+      }
+
+      .currency {
+        font-size: 15px;
+        padding-top: 5px;
+        color: #ff6b00;
+        display: block;
+      }
+    }
+  }
+}

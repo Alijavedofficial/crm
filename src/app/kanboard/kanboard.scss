@@ -1,0 +1,95 @@
+/* styles/KanbanBoard.scss */
+.kanbanBoard {
+  display: flex;
+  gap: 1rem;
+  
+}
+
+.column {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 13.5rem;
+  flex-grow: 1;
+}
+
+.columnTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.task {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+.line{
+  color: #000;
+  font-size: 14px ;
+}
+.line1{
+  font-weight: 600;
+}
+.status{
+  padding: 5px 10px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 6px;
+}
+.taskFooter {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentsButton {
+  background-color: #f1f1f1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.statusButton {
+  background-color: #ff7043;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.divv{
+  border-bottom: 1 px solid #333;
+}
+.taskFooter {
+  margin-top: 8px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.commentInput {
+  flex: 1;
+  padding: 8px 0px;
+  border: none;
+}
+
+.sendButton {
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  background-color: #ff7043;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
